@@ -6,8 +6,8 @@ A API ...(...)
 
 ##### 1. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 2. [**Consultando uma posição**](#consultando-uma-posição)
-##### 3. [**Consultando multiplas requisições**]
-##### 4. [**Token de autenticação**]
+##### 3. [**Consultando multiplas requisições**](#consultando-multiplas-requisições)
+##### 4. [**Token de autenticação**](#token-de-autenticação)
 
 
 
