@@ -33,7 +33,7 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 
 A requisição acima irá retornar on json com o seguinte valor:
 
-```json
+```
 {
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
