@@ -23,6 +23,8 @@ POST curl 'http://{{sua URL}}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-
 
 Sempre que uma posição for concluída a API irá procurar as URLs cadastradas relativas a esta posição e enviará a informação por chamada REST.
 
+## My Multi Word Header
+
 ### Consultando uma posição
 
 Após o recebimento da UID da posição é possível fazer uma requisição para consultar os dados desta posição, para isto:
@@ -64,7 +66,7 @@ Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no
 ```
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,exame,role,department'
 ```
-## My Multi Word Header
+
 Exemplos:
 
 ```
