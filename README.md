@@ -33,7 +33,7 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 
 A requisição acima irá retornar on json com o seguinte valor:
 
-```javascript
+```json
 {
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
@@ -83,7 +83,7 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 
 Esta requisição irá responder um Json com um objeto com um cabeçalho e uma lista de posições:
 
-```javascript
+```
 {
 "count":2,
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
