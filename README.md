@@ -25,7 +25,7 @@ Sempre que uma posição for concluída a API irá procurar as URLs cadastradas 
 
 ### Consultando uma posição
 
-Após o recebimento da UID da posição é possível fazer uma requisição para consultar os dados desta posição, para isto:
+Após o recebimento da UID da posição é possível utiliza-la para fazer uma requisição, para isto:
 
 ```
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
@@ -39,9 +39,9 @@ A requisição acima irá retornar on json com o seguinte valor:
   "profile":{
     "name":"xxx",
     "email":"xxx@yyy.com",
-    "mobile":"11 12345 12345"
+    "mobile":"11 12345 1234"
   },
-  "sms_sent":"11 12345 12345",
+  "sms_sent":"11 12345 1234",
   "email_sent":"xxx@yyy.com",
   "jornada":"Descrição da jornada",
   "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
@@ -53,7 +53,7 @@ A requisição acima irá retornar on json com o seguinte valor:
 }
 ```
 
-Além destes campos, é possível acrescentar outros campos opcionais:
+Além destes campos, é possível acrescentar outros opcionais:
 
 - docs: A lista de documentos enviados pelo usuário (cpf, rg, endereço)
 - role: O cargo que foi contratado
@@ -69,6 +69,7 @@ Exemplos:
 
 ```
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,exame
+
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 
@@ -84,12 +85,43 @@ Esta requisição irá responder um Json com um objeto com um cabeçalho e uma l
 
 ```json
 {
-  "count":5,
-  "positions"[{...},{...},{...},{...},{...}]
+"count":2,
+  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "profile":{
+    "name":"xxx",
+    "email":"xxx@yyy.com",
+    "mobile":"11 12345 1234"
+  },
+  "sms_sent":"11 12345 1234",
+  "email_sent":"xxx@yyy.com",
+  "jornada":"Descrição da jornada",
+  "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "status":240,
+  "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
+  "admission_date":"2018-08-08 00:00:00.000Z",
+  "_created":"2017-07-17 19:03:24.216Z",
+  "_updated":"2017-07-17 19:03:24.216Z"
+}
+
+{
+  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "profile":{
+    "name":"xyz",
+    "email":"zzz@www.com",
+    "mobile":"11 54321 4321"
+  },
+  "sms_sent":"11 54321 4321",
+  "email_sent":"www@zzz.com",
+  "jornada":"Descrição da jornada",
+  "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "status":240,
+  "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
+  "admission_date":"2017-05-08 00:00:00.000Z",
+  "_created":"2017-07-19 19:03:24.216Z",
+  "_updated":"2017-07-19 19:03:24.216Z"
 }
 ```
 É possível filtrar a busca por **account**.
-
 ```
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
