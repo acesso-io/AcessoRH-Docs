@@ -2,25 +2,33 @@
 
 A API ...(...)
 
+## Índice
+
+##### 1. **Recebendo notificação de posições concluídas**
+##### 2. **Consultando uma posição**
+##### 3. **Consultando multiplas requisições**
+##### 4. **Token de autenticação**
+
+[click on this link](##my-multi-word-header)
+
 
 ### Recebendo notificação de posições concluídas
 
-O AcessoRH disponibiliza uma plataforma para notificar a conclusão de um cadastro.
-Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH irá enviar a seguinte 
-requisição para esta URL:
+O AcessoRH disponibiliza uma plataforma para verificar a **conclusão** de um cadastro.
+Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH irá enviar a seguinte requisição:
 
 ```
 POST curl 'http://{{sua URL}}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
 ```
 
-Sempre que uma posição for concluída a API irá procurar as URLs cadastradas relativas a esta posição e enviará a informação
-por chamada REST.
+Sempre que uma posição for concluída a API irá procurar as URLs cadastradas relativas a esta posição e enviará a informação por chamada REST.
 
 ### Consultando uma posição
 
 Após o recebimento da UID da posição é possível fazer uma requisição para consultar os dados desta posição, para isto:
 
-```POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
+```
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
 ```
 
 A requisição acima irá retornar on json com o seguinte valor:
@@ -53,12 +61,14 @@ Além destes campos, é possível acrescentar outros campos opcionais:
 
 Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no request, colocando o parametro **include** da seguinte forma:
 
-```POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,exame,role,department'
 ```
-
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,exame,role,department'
+```
+## My Multi Word Header
 Exemplos:
 
-```GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,exame
+```
+GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,exame
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 
@@ -66,7 +76,8 @@ GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 
 É possível consultar multiplas posições relativas a uma conta ou organização (dependendo da permissão do token). Para isto enviar a seguinte requisição:
 
-```POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions'
+```
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions'
 ```
 
 Esta requisição irá responder um Json com um objeto com um cabeçalho e uma lista de posições:
@@ -79,10 +90,11 @@ Esta requisição irá responder um Json com um objeto com um cabeçalho e uma l
 ```
 É possível filtrar a busca por **account**.
 
-```POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+```
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
 
-Nestas buscas não pode ser passado como parametros os **includes**, sendo que estes apenas podem ser exibidos na busca por uma posição.
+Nestas buscas não pode ser passado como parametros os **includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
 
 ### Token de autenticação
 
