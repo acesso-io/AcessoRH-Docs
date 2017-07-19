@@ -9,7 +9,7 @@ A API ...(...)
 ##### 3. **Consultando multiplas requisições**
 ##### 4. **Token de autenticação**
 
-[click on this link](##my-multi-word-header)
+[click on this link](#my-multi-word-header)
 
 
 ### Recebendo notificação de posições concluídas
