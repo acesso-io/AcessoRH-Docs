@@ -5,11 +5,11 @@ A API ...(...)
 ## Índice
 
 ##### 1. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
-##### 2. **Consultando uma posição**
-##### 3. **Consultando multiplas requisições**
-##### 4. **Token de autenticação**
+##### 2. [**Consultando uma posição**](#Consultando uma posição)
+##### 3. [**Consultando multiplas requisições**]
+##### 4. [**Token de autenticação**]
 
-[click on this link](#my-multi-word-header)
+
 
 
 ### Recebendo notificação de posições concluídas
@@ -22,8 +22,6 @@ POST curl 'http://{{sua URL}}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-
 ```
 
 Sempre que uma posição for concluída a API irá procurar as URLs cadastradas relativas a esta posição e enviará a informação por chamada REST.
-
-## My Multi Word Header
 
 ### Consultando uma posição
 
