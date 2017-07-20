@@ -384,7 +384,7 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
 ```go
 {
 "count":2,
-  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "_id":UUID("56786739-8916-7259-6730-815092597835"),
   "profile":{
     "name":"xxx",
     "email":"xxx@yyy.com",
@@ -411,7 +411,7 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
   "sms_sent":"11 54321 4321",
   "email_sent":"www@zzz.com",
   "jornada":"Descrição da jornada",
-  "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "acc":UUID("12345678-1234-1234-1234-123456789123"),
   "status":240,
   "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
   "admission_date":"2017-05-08 00:00:00.000Z",
@@ -425,6 +425,32 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 ```
 
 Nestas buscas não pode ser passado como parâmetros os **includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
+
+Exemplo:
+
+```
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=12345678-1234-1234-1234-123456789123'
+```
+Resultado em Json:
+```
+{
+  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "profile":{
+    "name":"xyz",
+    "email":"zzz@www.com",
+    "mobile":"11 54321 4321"
+  },
+  "sms_sent":"11 54321 4321",
+  "email_sent":"www@zzz.com",
+  "jornada":"Descrição da jornada",
+  "acc":UUID("12345678-1234-1234-1234-123456789123"),
+  "status":240,
+  "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
+  "admission_date":"2017-05-08 00:00:00.000Z",
+  "_created":"2017-07-19 19:03:24.216Z",
+  "_updated":"2017-07-19 19:03:24.216Z"
+}
+```
 
 ### Token de autenticação
 
