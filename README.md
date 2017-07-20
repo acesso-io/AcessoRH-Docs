@@ -384,7 +384,7 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
 ```go
 {
 "count":2,
-  "_id":UUID("56786739-8916-7259-6730-815092597835"),
+  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
     "name":"xxx",
     "email":"xxx@yyy.com",
@@ -393,7 +393,7 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
   "sms_sent":"11 12345 1234",
   "email_sent":"xxx@yyy.com",
   "jornada":"Descrição da jornada",
-  "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "acc":UUID("56786739-8916-7259-6730-815092597835"),
   "status":240,
   "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
   "admission_date":"2018-08-08 00:00:00.000Z",
