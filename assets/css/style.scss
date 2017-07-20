@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-body.page .header-wrapper {
+div#body div#page-header {
     background: #333;
     background-image: url(https://yt3.ggpht.com/-3cwGvLRVdcw/AAAAAAAAAAI/AAAAAAAAAAA/6-A5AC7qR-Y/s900-c-k-no-mo-rj-c0xffffff/photo.jpg);
     background-attachment: fixed;
