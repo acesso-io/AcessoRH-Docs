@@ -1,6 +1,6 @@
-# AcessoRH API
+# **AcessoRH API**
 
-Plataforma de AcessoRH para consulta de cadastros concluídos
+Plataforma da AcessoRH para consulta de cadastros concluídos.
 
 ## Índice
 
@@ -8,8 +8,6 @@ Plataforma de AcessoRH para consulta de cadastros concluídos
 ##### 2. [**Consultando uma posição**](#consultando-uma-posição)
 ##### 3. [**Consultando múltiplas requisições**](#consultando-multiplas-requisições)
 ##### 4. [**Token de autenticação**](#token-de-autenticação)
-
-
 
 
 ### Recebendo notificação de posições concluídas
@@ -25,13 +23,13 @@ Sempre que uma posição for concluída a API procurará as URLs cadastradas rel
 
 ### Consultando uma posição
 
-Após o recebimento da UID da posição é possível utilizá-la para fazer uma requisição, para isto:
+Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para fazer uma requisição, para isto:
 
 ```
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
 ```
 
-A requisição acima retornará um Json com o seguinte valor:
+A requisição acima retornará um Json com o seguinte valor da posição:
 
 ```go
 {
@@ -70,7 +68,8 @@ Exemplos:
 
 ```
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,exame
-
+```
+```
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 
@@ -82,7 +81,7 @@ GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions'
 ```
 
-Esta requisição responderá um Json com um objeto com um cabeçalho e uma lista de posições:
+Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posições:
 
 ```go
 {
