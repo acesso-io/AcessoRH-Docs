@@ -1,6 +1,6 @@
-# **AcessoRH API**
+# **Acesso RH API**
 
- Plataforma da AcessoRH para consulta de cadastros concluídos.
+ Plataforma da Acesso RH para consulta de cadastros concluídos.
 
 
 ## Índice
