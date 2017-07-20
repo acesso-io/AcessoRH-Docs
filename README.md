@@ -432,7 +432,7 @@ Exemplo:
 POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
 Resultado em Json:
-```
+```go
 {
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
