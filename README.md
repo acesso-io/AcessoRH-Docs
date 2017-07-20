@@ -192,7 +192,7 @@ Resultado em Json de todos campos adicionais:
       "data": {
         "id": "7d5eb9da-b50e-49f7-8c3e-3ee5877eb620",
         "cep": "05728030",
-        "logradouro": "Rua das cacetas",
+        "logradouro": "Rua dos famosos",
         "numero": "313",
         "complemento": "199/1",
         "bairro": "Beverly Hills",
