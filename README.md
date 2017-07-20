@@ -360,7 +360,7 @@ Resultado em Json de todos campos adicionais:
   "role": {
     "account": "4573eec6-25b8-41f9-bb49-9a5c3fcb9fff",
     "id": "a5821584-ca63-441b-9fbe-77d3e8489f1c",
-    "name": "Matador de aluguel"
+    "name": "Hitman"
   },
   "status": {
     "code": 400,
