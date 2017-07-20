@@ -2,6 +2,11 @@
 ---
 
 @import "{{ site.theme }}";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
 
 .page-header {
   background-image: linear-gradient(90deg,#77ecd1 0,#46ce7e);
