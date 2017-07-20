@@ -6,7 +6,7 @@ Plataforma da AcessoRH para consulta de cadastros concluídos.
 
 ##### 1. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 2. [**Consultando uma posição**](#consultando-uma-posição)
-##### 3. [**Consultando múltiplas requisições**](#consultando-multiplas-requisições)
+##### 3. [**Consultando múltiplas requisições**](#consultando-múltiplas-requisições)
 ##### 4. [**Token de autenticação**](#token-de-autenticação)
 
 
