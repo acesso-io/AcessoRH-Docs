@@ -53,7 +53,7 @@ A requisição acima retornará um Json com o seguinte valor da posição:
 
 Além destes campos, é possível acrescentar outros opcionais:
 
-- docs: A lista de documentos enviados pelo usuário (cpf, rg, endereço)
+- docs: A lista de documentos enviados pelo usuário (cpf, rg, endereço, etc)
 - role: O cargo que foi contratado
 - account: A conta na qual a posição foi adicionada
 - department: O Departamento
@@ -61,13 +61,13 @@ Além destes campos, é possível acrescentar outros opcionais:
 Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no request, colocando o parâmetro **include** da seguinte forma:
 
 ```
-POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,exame,role,department'
+POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,account,role,department'
 ```
 
 Exemplos:
 
 ```
-GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,exame
+GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 ```
 GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
