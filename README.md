@@ -57,6 +57,7 @@ Além destes campos, é possível acrescentar outros opcionais:
 
 - docs: A lista de documentos enviados pelo usuário (cpf, rg, endereço)
 - role: O cargo que foi contratado
+- account: A conta na qual a posição foi adicionada
 - department: O Departamento
 
 Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no request, colocando o parametro **include** da seguinte forma:
