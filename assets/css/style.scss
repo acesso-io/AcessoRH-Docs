@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
-body {
-    background-image: url("gradient_bg.png");
+body.page .header-wrapper {
+    background: #333;
+    background-image: url(assets/css/logo_verde.png);
+    background-attachment: fixed;
+    background-size: auto !important;
+    min-height: 200px;
 }
