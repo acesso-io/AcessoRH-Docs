@@ -84,7 +84,7 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 
 Esta requisição irá responder um Json com um objeto com um cabeçalho e uma lista de posições:
 
-```
+```go
 {
 "count":2,
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
