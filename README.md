@@ -16,7 +16,7 @@ O AcessoRH disponibiliza uma plataforma para verificar a **conclusão** de um ca
 Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH enviará a seguinte requisição:
 
 ```
-POST curl 'http://{{sua URL}}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
+POST curl 'http://{sua URL}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
 ```
 
 Sempre que uma posição for concluída a API procurará as URLs cadastradas relativas a esta posição e enviará a informação por chamada REST.
