@@ -383,40 +383,43 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
 
 ```go
 {
-"count":2,
-  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "profile":{
-    "name":"xxx",
-    "email":"xxx@yyy.com",
-    "mobile":"11 12345 1234"
-  },
-  "sms_sent":"11 12345 1234",
-  "email_sent":"xxx@yyy.com",
-  "jornada":"Descrição da jornada",
-  "acc":UUID("56786739-8916-7259-6730-815092597835"),
-  "status":240,
-  "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
-  "admission_date":"2018-08-08 00:00:00.000Z",
-  "_created":"2017-07-17 19:03:24.216Z",
-  "_updated":"2017-07-17 19:03:24.216Z"
-}
-
-{
-  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "profile":{
-    "name":"xyz",
-    "email":"zzz@www.com",
-    "mobile":"11 54321 4321"
-  },
-  "sms_sent":"11 54321 4321",
-  "email_sent":"www@zzz.com",
-  "jornada":"Descrição da jornada",
-  "acc":UUID("12345678-1234-1234-1234-123456789123"),
-  "status":240,
-  "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
-  "admission_date":"2017-05-08 00:00:00.000Z",
-  "_created":"2017-07-19 19:03:24.216Z",
-  "_updated":"2017-07-19 19:03:24.216Z"
+  "count":2,
+  "positions":[
+    {
+      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "profile":{
+        "name":"xxx",
+        "email":"xxx@yyy.com",
+        "mobile":"11 12345 1234"
+      },
+      "sms_sent":"11 12345 1234",
+      "email_sent":"xxx@yyy.com",
+      "jornada":"Descrição da jornada",
+      "acc":UUID("56786739-8916-7259-6730-815092597835"),
+      "status":240,
+      "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
+      "admission_date":"2018-08-08 00:00:00.000Z",
+      "_created":"2017-07-17 19:03:24.216Z",
+      "_updated":"2017-07-17 19:03:24.216Z"
+    },
+    {
+      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "profile":{
+        "name":"xyz",
+        "email":"zzz@www.com",
+        "mobile":"11 54321 4321"
+      },
+      "sms_sent":"11 54321 4321",
+      "email_sent":"www@zzz.com",
+      "jornada":"Descrição da jornada",
+      "acc":UUID("12345678-1234-1234-1234-123456789123"),
+      "status":240,
+      "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date":"2017-05-08 00:00:00.000Z",
+      "_created":"2017-07-19 19:03:24.216Z",
+      "_updated":"2017-07-19 19:03:24.216Z"
+    }
+  ]
 }
 ```
 É possível filtrar a busca por **account**.
@@ -434,21 +437,26 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 Resultado em Json:
 ```go
 {
-  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "profile":{
-    "name":"xyz",
-    "email":"zzz@www.com",
-    "mobile":"11 54321 4321"
-  },
-  "sms_sent":"11 54321 4321",
-  "email_sent":"www@zzz.com",
-  "jornada":"Descrição da jornada",
-  "acc":UUID("12345678-1234-1234-1234-123456789123"),
-  "status":240,
-  "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
-  "admission_date":"2017-05-08 00:00:00.000Z",
-  "_created":"2017-07-19 19:03:24.216Z",
-  "_updated":"2017-07-19 19:03:24.216Z"
+  "count":1,
+  "positions":[
+    {
+      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "profile":{
+        "name":"xyz",
+        "email":"zzz@www.com",
+        "mobile":"11 54321 4321"
+      },
+      "sms_sent":"11 54321 4321",
+      "email_sent":"www@zzz.com",
+      "jornada":"Descrição da jornada",
+      "acc":UUID("12345678-1234-1234-1234-123456789123"),
+      "status":240,
+      "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date":"2017-05-08 00:00:00.000Z",
+      "_created":"2017-07-19 19:03:24.216Z",
+      "_updated":"2017-07-19 19:03:24.216Z"
+    }
+  ]
 }
 ```
 
