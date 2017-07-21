@@ -27,7 +27,7 @@ Sempre que uma posição for concluída a API procurará as URLs cadastradas rel
 Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para fazer uma requisição, para isto:
 
 ```
-curl -X GET  -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
+curl -X GET  -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}'
 ```
 
 A requisição acima retornará um Json com o seguinte valor da posição:
@@ -70,10 +70,10 @@ curl -X GET -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v
 Exemplos:
 
 ```
-GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
+GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 ```
-GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
+GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 Resultado em Json de todos campos adicionais:
 
