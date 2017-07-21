@@ -33,6 +33,8 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 A requisição acima retornará um Json com o seguinte valor da posição:
 
 ```go
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
   "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
@@ -76,6 +78,8 @@ GET api/V1/position/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 Resultado em Json de todos campos adicionais:
 
 ```go
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
   "account": {
     "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -382,6 +386,8 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posições:
 
 ```go
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
   "count":2,
   "positions":[
@@ -436,6 +442,8 @@ POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/
 ```
 Resultado em Json:
 ```go
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
   "count":1,
   "positions":[
