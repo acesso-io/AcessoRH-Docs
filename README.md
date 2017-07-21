@@ -8,12 +8,12 @@
 ##### 2. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 3. [**Consultando uma posição**](#consultando-uma-posição)
 ##### 4. [**Consultando múltiplas requisições**](#consultando-múltiplas-requisições)
-##### 5. [**Token de autenticação**](#token-de-autenticação)
+##### 5. [**Tokens de autenticação**](#token-de-autenticação)
 
 ### Glossário
 
 <a id="chamada_rest">Chamada REST:</a>
- Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
+: Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
 
 |Comandos|Descrição|
@@ -22,6 +22,15 @@
 |POST    |Usado para criar informação.
 |PUT     |Usado para alterar/repor informação.
 |DELETE  |Usado para deletar informação.
+
+
+<a id="json">JSON:</a>
+: Json é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
+
+
+
+
+
 
 ### Recebendo notificação de posições concluídas
 
@@ -42,7 +51,7 @@ Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{uid_pos}'
 ```
 
-A requisição acima retornará um Json com o seguinte valor da posição:
+A requisição acima retornará um [Json](#json) com o seguinte valor da posição:
 
 ```go
 HTTP/1.1 200 OK
@@ -87,7 +96,7 @@ GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
-Resultado em Json de todos campos adicionais:
+Resultado em [Json](#json) de todos campos adicionais:
 
 ```go
 HTTP/1.1 200 OK
@@ -395,7 +404,7 @@ Content-Type: application/json
 POST curl -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
 ```
 
-Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posições:
+Esta requisição responderá um [Json](#json) com objeto, cabeçalho e uma lista de posições:
 
 ```go
 HTTP/1.1 200 OK
@@ -453,7 +462,7 @@ Exemplo:
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
-Resultado em Json:
+Resultado em [Json](#json):
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
