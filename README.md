@@ -20,12 +20,12 @@
 :   Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
 
-|Comandos    |Descrição     |
-|---|----|---|---|---|
+|Comandos|Descrição|
+|--------|-----|
 |GET     |Usado para retornar informação.
-|POST     |Usado para criar informação.
+|POST    |Usado para criar informação.
 |PUT     |Usado para alterar/repor informação.
-|DELETE     |Usado para deletar informação.
+|DELETE  |Usado para deletar informação.
 
 ### Recebendo notificação de posições concluídas
 
