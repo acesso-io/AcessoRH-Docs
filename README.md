@@ -7,7 +7,7 @@
 
 ##### 1. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 2. [**Consultando uma posição**](#consultando-uma-posição)
-##### 3. [**Consultando múltiplas requisições**](#consultando-múltiplas-requisições)
+##### 3. [**Consultando múltiplas posições**](#consultando-múltiplas-requisições)
 ##### 4. [**Token de autenticação**](#token-de-autenticação)
 
 
@@ -27,7 +27,7 @@ Sempre que uma posição for concluída a API procurará as URLs cadastradas rel
 Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para fazer uma requisição, para isto:
 
 ```
-curl -X GET  -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}'
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{uid_pos}'
 ```
 
 A requisição acima retornará um Json com o seguinte valor da posição:
@@ -389,6 +389,7 @@ Esta requisição responderá um Json com objeto, cabeçalho e uma lista de posi
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
+  "offset":0,
   "count":2,
   "positions":[
     {
