@@ -13,7 +13,7 @@
 ### Glossário
 
 <a id="chamada_rest">Chamada REST:</a>
-:   Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
+ Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
 
 |Comandos|Descrição|
