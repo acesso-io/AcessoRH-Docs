@@ -27,7 +27,7 @@ Sempre que uma posição for concluída a API procurará as URLs cadastradas rel
 Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para fazer uma requisição, para isto:
 
 ```
-POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
+curl -X GET  -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/position/{uid_pos}'
 ```
 
 A requisição acima retornará um Json com o seguinte valor da posição:
@@ -64,7 +64,7 @@ Além destes campos, é possível acrescentar outros opcionais:
 Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no request, colocando o parâmetro **include** da seguinte forma:
 
 ```
-POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,account,role,department'
+curl -X GET -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions/{uid_pos}?include=docs,account,role,department'
 ```
 
 Exemplos:
@@ -430,7 +430,7 @@ Content-Type: application/json
 ```
 É possível filtrar a busca por **account**.
 ```
-POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+curl -X GET -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
 
 Nestas buscas não pode ser passado como parâmetros os **includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
@@ -438,7 +438,7 @@ Nestas buscas não pode ser passado como parâmetros os **includes**, sendo que 
 Exemplo:
 
 ```
-POST curl -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=12345678-1234-1234-1234-123456789123'
+curl -X GET -H "Authorization: Bearer {token}" 'http://www.acessorh.com.br/api/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
 Resultado em Json:
 ```go
