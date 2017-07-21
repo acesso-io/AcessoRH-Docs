@@ -2,9 +2,7 @@
 
  Plataforma da Acesso RH para consulta de cadastros concluídos.
 
-
 ## Índice
-
 
 ##### 1. [**Glossário**](#glossário)
 ##### 2. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
@@ -14,9 +12,7 @@
 
 ### Glossário
 
-
-
-<a id="chamada_rest">Chamada REST</a>
+<a id="chamada_rest">Chamada REST:</a>
 :   Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
 
@@ -102,7 +98,7 @@ Content-Type: application/json
     "name": "zyx",
     "trading_name": "xyz CO",
     "phone_number": "11 xxxx-xxxx",
-    "email": "xyz@www.io",
+    "email": "comercial@acesso.io",
     "zip_code": "00000000",
     "address": "Praça General Gentil Falcão",
     "address2": null,
@@ -110,7 +106,7 @@ Content-Type: application/json
     "city": "São Paulo",
     "district": "Cidade Monções",
     "brand": {
-      "url": "https://xyz.com"
+      "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
     },
     "cnpj": "",
     "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
