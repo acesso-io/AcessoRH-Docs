@@ -34,10 +34,15 @@
 ```go
 "2005-10-30 10:45:00.000"
 ```
+<a id="token">Token</a>
+: O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
+
+<a id="refresh_token">Refresh Token</a>
+: Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso. 
 
 ### Ativação da API
 
-A ativação da API é feita via dashboard. Clicando em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informações:
+A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informações:
 
 - Contas: As contas que poderão ser acessadas, e as respectivas posições.
 - Duração Token: O tempo de expiração do token.
@@ -48,9 +53,8 @@ Após o preenchimento é gerado um refresh token. Este refresh token é utilizad
 curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
 ```
 
-A resposta trás o token final e a data de expiração:
+A resposta trás o token final e a data de expiração em [JSON](#json):
 
-Resultado em [JSON](#json):
 
 ```go
 HTTP/1.1 200 OK
@@ -61,14 +65,14 @@ Content-Type: application/json
 }
 ```
 
-Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição via dashboard de autenticação pra adquiririr um novo refresh token.
+Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição utilizando um refresh token.
 
 
 
 ### Recebendo notificação de posições concluídas
 
 O Acesso RH disponibiliza uma plataforma para verificar a **conclusão** de um cadastro.
-Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH enviará a seguinte requisição:
+Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH enviará a seguinte requisição para a URL do cliente:
 
 ```
 POST {sua URL} -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
@@ -97,16 +101,16 @@ A requisição acima retornará um [JSON](#json) com o seguinte valor da posiç�
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "profile":{
     "name":"xxx",
-    "email":"xxx@yyy.com",
+    "email":"acesso@io.com",
     "mobile":"11 12345 1234"
   },
   "sms_sent":"11 12345 1234",
-  "email_sent":"xxx@yyy.com",
+  "email_sent":"acesso@io.com",
   "jornada":"Descrição da jornada",
-  "acc":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "acc":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "status":240,
   "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
   "admission_date":"2018-08-08 00:00:00.000Z",
@@ -174,10 +178,10 @@ Content-Type: application/json
         "numero": "00000000000",
         "serie": null,
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto2": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -192,7 +196,7 @@ Content-Type: application/json
         "conta": "00000",
         "digito": "0",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -207,13 +211,13 @@ Content-Type: application/json
         "uf": "SP",
         "data_emissao": "2017-01-10T22:00:00-02:00",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto2": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto3": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -231,10 +235,10 @@ Content-Type: application/json
         "categoria": "AB",
         "remunerado": false,
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto2": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -246,7 +250,7 @@ Content-Type: application/json
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "numero": "00000000000",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -264,7 +268,7 @@ Content-Type: application/json
         "cidade": "Los Angeles",
         "uf": "LA",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -276,7 +280,7 @@ Content-Type: application/json
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "instrucao": "superior-incompleto",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -287,7 +291,7 @@ Content-Type: application/json
       "data": {
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -314,7 +318,7 @@ Content-Type: application/json
         "dependente": false,
         "primeiro_emprego": true,
         "foto": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -326,7 +330,7 @@ Content-Type: application/json
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "numero": "00000000",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -343,10 +347,10 @@ Content-Type: application/json
         "naturalidade_cidade": "Los Angeles",
         "naturalidade_estado": "LA",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto2": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -358,7 +362,7 @@ Content-Type: application/json
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "contribuinte": false,
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -370,7 +374,7 @@ Content-Type: application/json
         "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "numero": "00000000000",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -386,10 +390,10 @@ Content-Type: application/json
         "uf": "LA",
         "data_emissao": "2017-01-10T22:00:00-02:00",
         "foto1": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         },
         "foto2": {
-          "url": "https://xyz.com"
+          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
         }
       },
       "valid": true,
@@ -415,7 +419,7 @@ Content-Type: application/json
   },
   "profile": {
     "id": null,
-    "email": "zzy@www.io",
+    "email": "acesso@io.com",
     "mobile": "11 12345 12345",
     "name": "yyxz",
     "photo": {
@@ -454,16 +458,16 @@ Content-Type: application/json
   "count":2,
   "positions":[
     {
-      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
       "profile":{
         "name":"xxx",
-        "email":"xxx@yyy.com",
+        "email":"acesso@io.com",
         "mobile":"11 12345 1234"
       },
       "sms_sent":"11 12345 1234",
-      "email_sent":"xxx@yyy.com",
+      "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":UUID("56786739-8916-7259-6730-815092597835"),
+      "acc":("56786739-8916-7259-6730-815092597835"),
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
       "admission_date":"2018-08-08 00:00:00.000Z",
@@ -471,16 +475,16 @@ Content-Type: application/json
       "_updated":"2017-07-17 19:03:24.216Z"
     },
     {
-      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
       "profile":{
         "name":"xyz",
-        "email":"zzz@www.com",
+        "email":"acesso@io.com",
         "mobile":"11 54321 4321"
       },
       "sms_sent":"11 54321 4321",
-      "email_sent":"www@zzz.com",
+      "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":UUID("12345678-1234-1234-1234-123456789123"),
+      "acc":("12345678-1234-1234-1234-123456789123"),
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date":"2017-05-08 00:00:00.000Z",
@@ -513,16 +517,16 @@ Content-Type: application/json
   "offset":0,
   "positions":[
     {
-      "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
       "profile":{
         "name":"xyz",
-        "email":"zzz@www.com",
+        "email":"acesso@io.com",
         "mobile":"11 54321 4321"
       },
       "sms_sent":"11 54321 4321",
-      "email_sent":"www@zzz.com",
+      "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":UUID("12345678-1234-1234-1234-123456789123"),
+      "acc":("12345678-1234-1234-1234-123456789123"),
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date":"2017-05-08 00:00:00.000Z",
@@ -559,7 +563,7 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
    "name": "AcessoBIO",
-   "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+   "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
@@ -577,7 +581,7 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "5f23faf1-170b-4f7a-a74b-a79cd9dad348",
    "name": "AcessoRH",
-   "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+   "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
@@ -610,7 +614,7 @@ Content-Type: application/json
   "email": "acesso@io.com",
   "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
   "name": "xyz",
-  "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
   "phone_number": "00 00000-0000",
   "state": "São Paulo",
   "trading_name": "Acesso IO LTDA",
