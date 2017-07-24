@@ -35,28 +35,26 @@
 ```go
 "2005-10-30 10:45:00.000"
 ```
-
 <a id="token">Token</a>
 : O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
-
 
 <a id="refresh_token">Refresh Token</a>
 : Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso. 
 
 ### Ativação da API
 
-A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informações:
+A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um [token](#token) de acesso. Para este formulario é necessário preencher as seguintes informações:
 
 - Contas: As contas que poderão ser acessadas, e as respectivas posições.
 - Duração Token: O tempo de expiração do token.
 
-Após o preenchimento é gerado um refresh token. Este refresh token é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o token final:
+Após o preenchimento é gerado um [refresh token](#refresh_token). Este [refresh token](#refresh_token) é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o [token](#token) final:
 
 ```
 curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
 ```
 
-A resposta trás o token final e a data de expiração em [JSON](#json):
+A resposta trás o [token](#token) final e a data de expiração em [JSON](#json):
 
 
 ```go
@@ -68,7 +66,7 @@ Content-Type: application/json
 }
 ```
 
-Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição utilizando um refresh token.
+Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o [token](#token) expirar, é necessário fazer outra requisição utilizando um [refresh token](#refresh_token).
 
 
 
@@ -445,7 +443,7 @@ Content-Type: application/json
 
 ### Consultando múltiplas posições
 
-É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão do token). Para isto enviar a seguinte requisição:
+É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão do [token](#token)). Para isto enviar a seguinte requisição:
 
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
@@ -541,7 +539,7 @@ Content-Type: application/json
 ```
 ### Consultando multiplas contas
 
-Para consultar multiplas contas é necessário um token com permissão, que retornara as **contas da organização**.
+Para consultar multiplas contas é necessário um [token](#token) com permissão, que retornara as **contas da organização**.
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts'
@@ -595,7 +593,7 @@ Content-Type: application/json
 
 ### Consultando uma conta
 
-Para consultar uma conta é necessário um token com com permissão, e o UID de uma conta específica.
+Para consultar uma conta é necessário um [token](#token) com com permissão, e o UID de uma conta específica.
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
