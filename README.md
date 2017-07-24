@@ -35,8 +35,10 @@
 ```go
 "2005-10-30 10:45:00.000"
 ```
+
 <a id="token">Token</a>
 : O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
+
 
 <a id="refresh_token">Refresh Token</a>
 : Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso. 
