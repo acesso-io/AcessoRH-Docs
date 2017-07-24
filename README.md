@@ -525,9 +525,30 @@ Content-Type: application/json
 }
 ```
 
-### Token de autenticação
+### Ativação da API
 
-Os tokens de autenticação são fixos e com data de validade de um ano. Eles podem ter dois tipos de roles:
+A ativação da API é feita via dashboard. Clicando em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informaçes:
+- Contas: As contas que poderão ser acessadas, e as respectivas posiçes
+- Duração Token: O tempo de expiração do token
 
-- Conta: Permite usar a API apenas para consulta interna de uma conta, ou seja, apenas às posições relativas àquela conta.
-- Organização: Permite uma visualização ampla.
+Após o preenchimento é gerado um refresh token. Este refresh token é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição pra adquirir o token final:
+
+```
+curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
+```
+
+O resultado disto será o token final:
+
+Resultado em [Json](#json):
+```go
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
+  "exp": "2017-05-08 00:00:00.000Z",
+}
+```
+
+Use o token final para fazer as chamadas REST durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição ao endpoint de autenticação pra adquiririr um outro token.
+
+((deletando refresh token))
