@@ -43,7 +43,7 @@
 
 ### Ativação da API
 
-A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um [token](#token) de acesso. Para este formulario é necessário preencher as seguintes informações:
+A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um [token](#token) de acesso. Para este formulário é necessário preencher as seguintes informações:
 
 - Contas: As contas que poderão ser acessadas, e as respectivas posições.
 - Duração Token: O tempo de expiração do token.
@@ -54,7 +54,7 @@ Após o preenchimento é gerado um [refresh token](#refresh_token). Este [refres
 curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
 ```
 
-A resposta trás o [token](#token) final e a data de expiração em [JSON](#json):
+A resposta traz o [token](#token) final e a data de expiração em [JSON](#json):
 
 
 ```go
@@ -73,7 +73,7 @@ Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu t
 ### Recebendo notificação de posições concluídas
 
 O Acesso RH disponibiliza uma plataforma para verificar a **conclusão** de um cadastro.
-Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH enviará a seguinte requisição para a URL do cliente:
+Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acesso RH enviará a seguinte requisição para a URL do cliente:
 
 ```
 POST {sua URL} -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
@@ -86,7 +86,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-Sempre que uma posição for concluída a API procurará as URLs cadastradas relativas a esta posição e enviará a informação por [chamada REST](#chamada_rest).
+Sempre que uma posição for concluída a API procurará as URL’s cadastradas relativas a esta posição e enviará a informação por [chamada REST](#chamada_rest).
 
 ### Consultando uma posição
 
@@ -537,9 +537,9 @@ Content-Type: application/json
   ]
 }
 ```
-### Consultando multiplas contas
+### Consultando múltiplas contas
 
-Para consultar multiplas contas é necessário um [token](#token) com permissão, que retornara as **contas da organização**.
+Para consultar múltiplas contas é necessário um [token](#token) com permissão, que retornara as **contas da organização**.
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts'
@@ -593,7 +593,7 @@ Content-Type: application/json
 
 ### Consultando uma conta
 
-Para consultar uma conta é necessário um [token](#token) com com permissão, e o UID de uma conta específica.
+Para consultar uma conta é necessário um [token](#token) com permissão, e o UID de uma conta específica.
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
