@@ -43,8 +43,10 @@ Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu t
 
 ### Recebendo notificação de posições concluídas
 
-O Acesso RH disponibiliza de um sistema de notificação **PUSH** para cadastros **concluídos**. Sempre que uma posição for concluída a plataforma Acesso RH faz uma notificação **PUSH** para o endereço configurado no painel.
-Acesse o painel administrativo e cadastre uma URL apta a receber uma requisição POST, com isto a API da acesso RH enviará a seguinte requisição para a URL especificada:
+O Acesso RH disponibiliza de um sistema de notificação **PUSH** para cadastros **concluídos**.
+Sempre que uma posição for concluída, a plataforma dispara uma notificação **PUSH** para o endereço configurado no painel.
+
+No painel administrativo é possível cadastrar uma URL para receber as notificações (ex.: https://www.meu-site.com.br/acesso-rh/notificacao), uma vez cadastrado, toda nova conclusão de cadastro resultará em uma requisição como esta:
 
 ```
 POST {url especificada} HTTP/1.1
@@ -57,13 +59,13 @@ Content-Type: application/json;
 }
 ```
 
-A Plataform Acesso RH espera receber o seguinte resultado do cliente:
+A Plataform espera receber o seguinte recibo de entrega com sucesso:
 
 ```
 HTTP/1.1 200 OK
 ```
 
-Caso a URL configurada para **PUSH** não retorne o status descrito acima uma nova tentativa será realizada até que o status retornado seja o esperado (limitado a 10 requisições).
+Caso a URL configurada para **PUSH** não responda com o recibo de entrega com sucesso será efetuado um agendamento para um nova tentativa de entrega, esse processo será repetido até que retorne o recibo esperado (limitado a um numero máximo de notificações).
 
 ### Consultando uma posição
 
@@ -152,233 +154,163 @@ Content-Type: application/json
   },
   "docs": {
     "alistamento": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "ra": "123123",
-        "numero": "00000000000",
-        "serie": null,
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto2": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "ra": "123123",
+      "numero": "00000000000",
+      "serie": null,
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       },
-      "valid": true,
-      "name": "alistamento",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "foto2": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "banco": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "banco": "xyz",
-        "agencia": "0000",
-        "conta": "00000",
-        "digito": "0",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "banco",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "banco": "xyz",
+      "agencia": "0000",
+      "conta": "00000",
+      "digito": "0",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "carteira_trabalho": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000000",
-        "serie": "123",
-        "uf": "SP",
-        "data_emissao": "2017-01-10T22:00:00-02:00",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto2": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto3": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000000",
+      "serie": "123",
+      "uf": "SP",
+      "data_emissao": "2017-01-10T22:00:00-02:00",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       },
-      "valid": true,
-      "name": "carteira_trabalho",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "foto2": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      },
+      "foto3": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "cnh": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000000",
-        "validade": "2016-01-11T22:00:00-02:00",
-        "data_emissao": "2016-01-11T22:00:00-02:00",
-        "orgao_emissor": "SSPSP",
-        "uf": "SP",
-        "categoria": "AB",
-        "remunerado": false,
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto2": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000000",
+      "validade": "2016-01-11T22:00:00-02:00",
+      "data_emissao": "2016-01-11T22:00:00-02:00",
+      "orgao_emissor": "SSPSP",
+      "uf": "SP",
+      "categoria": "AB",
+      "remunerado": false,
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       },
-      "valid": true,
-      "name": "cnh",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "foto2": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "cpf": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000000",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "cpf",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000000",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "endereco": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "cep": "00000000",
-        "logradouro": "Rua dos famosos",
-        "numero": "313",
-        "complemento": "00/0",
-        "bairro": "Beverly Hills",
-        "cidade": "Los Angeles",
-        "uf": "LA",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "endereco",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "cep": "00000000",
+      "logradouro": "Rua dos famosos",
+      "numero": "313",
+      "complemento": "00/0",
+      "bairro": "Beverly Hills",
+      "cidade": "Los Angeles",
+      "uf": "LA",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "escolaridade": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "instrucao": "superior-incompleto",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "escolaridade",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "instrucao": "superior-incompleto",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "nascimento": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "nascimento",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "pessoal": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "nome": "xyz",
-        "nome_social": null,
-        "nome_mae": "zyx",
-        "nome_pai": null,
-        "phone_number": null,
-        "nascimento": "1972-01-25T21:00:00-03:00",
-        "sexo": "masculino",
-        "nacionalidade": "brasileiro",
-        "pais_nascimento": null,
-        "etnia": "branco",
-        "estado_civil": "solteiro",
-        "deficiencia": false,
-        "deficiencias": null,
-        "cnh": true,
-        "dependente": false,
-        "primeiro_emprego": true,
-        "foto": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "pessoal",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "nome": "xyz",
+      "nome_social": null,
+      "nome_mae": "zyx",
+      "nome_pai": null,
+      "phone_number": null,
+      "nascimento": "1972-01-25T21:00:00-03:00",
+      "sexo": "masculino",
+      "nacionalidade": "brasileiro",
+      "pais_nascimento": null,
+      "etnia": "branco",
+      "estado_civil": "solteiro",
+      "deficiencia": false,
+      "deficiencias": null,
+      "cnh": true,
+      "dependente": false,
+      "primeiro_emprego": true,
+      "foto": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "pis": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "pis",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "rg": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "0000000000",
-        "orgao_emissor": "LA",
-        "uf": "LA",
-        "data_expedicao": "2016-01-11T22:00:00-02:00",
-        "naturalidade_cidade": "Los Angeles",
-        "naturalidade_estado": "LA",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto2": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "0000000000",
+      "orgao_emissor": "LA",
+      "uf": "LA",
+      "data_expedicao": "2016-01-11T22:00:00-02:00",
+      "naturalidade_cidade": "Los Angeles",
+      "naturalidade_estado": "LA",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       },
-      "valid": true,
-      "name": "rg",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "foto2": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "sindicato": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "contribuinte": false,
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "sindicato",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "contribuinte": false,
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "sus": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000000",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
-      },
-      "valid": true,
-      "name": "sus",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000000",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     },
     "titulo_eleitor": {
-      "data": {
-        "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "numero": "00000000",
-        "zona": "11",
-        "secao": "000",
-        "uf": "LA",
-        "data_emissao": "2017-01-10T22:00:00-02:00",
-        "foto1": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        },
-        "foto2": {
-          "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
-        }
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "numero": "00000000",
+      "zona": "11",
+      "secao": "000",
+      "uf": "LA",
+      "data_emissao": "2017-01-10T22:00:00-02:00",
+      "foto1": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       },
-      "valid": true,
-      "name": "titulo_eleitor",
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "foto2": {
+        "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
+      }
     }
   },
   "exame": {
@@ -399,9 +331,9 @@ Content-Type: application/json
   },
   "profile": {
     "id": null,
-    "email": "acesso@io.com",
+    "email": "contato@acesso.io",
     "mobile": "11 12345 12345",
-    "name": "yyxz",
+    "name": "Fulano",
     "photo": {
       "url": null
     }
@@ -409,20 +341,21 @@ Content-Type: application/json
   "role": {
     "account": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "name": "xyz"
+    "name": "Assistente administrativo"
   },
   "status": {
     "code": 400,
     "name": "active"
   },
-  "updated": "2017-07-20T17:12:11.264-03:00"
+  "updated": "2017-07-20T17:12:11.264-03:00",
+  "created": "2017-07-20T17:12:11.264-03:00"
 }
-
 ```
 
 ### Consultando múltiplas posições
 
-É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão do [token](#token)). Para isto enviar a seguinte requisição:
+É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão configurada).
+Para isto enviar a seguinte requisição:
 
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
