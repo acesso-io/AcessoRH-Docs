@@ -64,7 +64,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
-  "exp": "2017-05-08 00:00:00.000Z",
+  "exp": "1500933544",
 }
 ```
 
