@@ -9,8 +9,9 @@
 ##### 3. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 4. [**Consultando uma posição**](#consultando-uma-posição)
 ##### 5. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
-##### 6. [**Consultando uma conta**](#consultando-uma-conta)
-##### 7. [**Consultando multiplas contas**](#consultando-multiplas-contas)
+##### 6. [**Consultando multiplas contas**](#consultando-multiplas-contas)
+##### 7. [**Consultando uma conta**](#consultando-uma-conta)
+
 
 ### Glossário
 
