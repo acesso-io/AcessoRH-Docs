@@ -31,10 +31,12 @@
 : JSON é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
 
 <a id="timestamps">Timestamps</a>
-:  O formato de data/tempo que utilizamos é em padrão UTC:
+:  O formato de data/tempo que utilizamos é em padrão UTC.
+
 ```go
 "2005-10-30 10:45:00.000"
 ```
+
 <a id="token">Token</a>
 : O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
 
