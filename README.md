@@ -39,13 +39,11 @@ Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto 
 
 ```
 POST {sua URL} -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
-HTTP/1.1 200 OK
-Content-Type: application/json
 ```
 
 e espera receber o seguinte resultado do cliente:
 
-```
+```go
 HTTP/1.1 200 OK
 Content-Type: application/json
 ```
