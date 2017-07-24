@@ -18,12 +18,12 @@
 A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um [token](#token) de acesso. Para este formulário é necessário preencher as seguintes informações:
 
 - Contas: As contas que poderão ser acessadas, e as respectivas posições.
-- Duração Token: O tempo de expiração do token.
+- Duração do Token: O tempo de expiração do token.
 
-Após o preenchimento é gerado um [refresh token](#refresh_token). Este [refresh token](#refresh_token) é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o [token](#token) final:
+Após o preenchimento é gerado um [refresh token](#refresh_token). Este [refresh token](#refresh_token) é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o [token](#token) final, ex.:
 
 ```
-curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
+curl -X GET  -H "Authorization: Bearer {refresh_token}" 'https://api.acessorh.com.br/v1/auth'
 ```
 
 A resposta traz o [token](#token) final e a data de expiração em [JSON](#json):
@@ -44,51 +44,57 @@ Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu t
 
 ### Recebendo notificação de posições concluídas
 
-O Acesso RH disponibiliza uma plataforma para verificar a **conclusão** de um cadastro.
-Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acesso RH enviará a seguinte requisição para a URL do cliente:
+O Acesso RH disponibiliza de um sistema de notificação **PUSH** para cadastros **concluídos**.
+Acesse o painel administrativo e cadastre uma URL apta a receber uma requisição POST, com isto a API da acesso RH enviará a seguinte requisição para a URL especificada:
 
 ```
-POST {sua URL} -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
+POST {url_especificada} HTTP/1.1
+Content-Type: application/json;
+
+{
+  "org": "xxxx-xxxxx-xxxx-xxxx",
+  "acc": "xxxx-xxxx-xxxx-xxxx",
+  "pos": "xxxx-xxxx-xxxx-xxxx"
+}
 ```
 
 Se espera receber o seguinte resultado do cliente:
 
 ```go
 HTTP/1.1 200 OK
-Content-Type: application/json
 ```
 
-Sempre que uma posição for concluída a API procurará as URL’s cadastradas relativas a esta posição e enviará a informação por [chamada REST](#chamada_rest).
+Sempre que uma posição for concluída a plataforma Acesso RH faz uma notificação **PUSH** para o endereço configurado no painel.
 
 ### Consultando uma posição
 
-Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para fazer uma requisição, para isto:
+Após o recebimento da notificação, é possível utilizar os dados recebidos para fazer uma consulta dos dados na plataforma, para isto, basta fazer a seguinte requisição abaixo, porém informando na URL o valor recebido no campo `pos`:
 
 ```
-curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{uid_pos}'
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{pos}'
 ```
 
-A requisição acima retornará um [JSON](#json) com o seguinte valor da posição:
+A requisição acima retornará um [JSON](#json) conforme o exemplo abaixo:
 
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "profile":{
-    "name":"xxx",
-    "email":"acesso@io.com",
-    "mobile":"11 12345 1234"
+  "_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "profile": {
+    "name": "xxx",
+    "email": "acesso@io.com",
+    "mobile": "11 12345 1234"
   },
-  "sms_sent":"11 12345 1234",
-  "email_sent":"acesso@io.com",
-  "jornada":"Descrição da jornada",
-  "acc":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "status":240,
-  "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
-  "admission_date":"2018-08-08 00:00:00.000Z",
-  "_created":"2017-07-17 19:03:24.216Z",
-  "_updated":"2017-07-17 19:03:24.216Z"
+  "sms_sent": "11 12345 1234",
+  "email_sent": "acesso@io.com",
+  "jornada": "Descrição da jornada",
+  "acc": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": 240,
+  "pagamento": { "vinculo": "clt", "valor": "R$ 4.321,00" },
+  "admission_date": "2018-08-08 00:00:00.000Z",
+  "_created": "2017-07-17 19:03:24.216Z",
+  "_updated": "2017-07-17 19:03:24.216Z"
 }
 ```
 
