@@ -23,32 +23,31 @@ A ativação da API é feita via dashboard. Clique em empresas e na aba API pree
 Após o preenchimento é gerado um [refresh token](#refresh_token). Este [refresh token](#refresh_token) é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o [token](#token) final, ex.:
 
 ```
-curl -X GET  -H "Authorization: Bearer {refresh_token}" 'https://api.acessorh.com.br/v1/auth'
+curl -X GET  -H "Authorization: Bearer {refresh token}" 'https://api.acessorh.com.br/v1/auth'
 ```
 
 A resposta traz o [token](#token) final e a data de expiração em [JSON](#json):
 
 
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
-  "exp": "1500933544",
+  "exp": "1500933544"
 }
 ```
 
 Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o [token](#token) expirar, é necessário fazer outra requisição utilizando um [refresh token](#refresh_token).
 
 
-
 ### Recebendo notificação de posições concluídas
 
-O Acesso RH disponibiliza de um sistema de notificação **PUSH** para cadastros **concluídos**.
+O Acesso RH disponibiliza de um sistema de notificação **PUSH** para cadastros **concluídos**. Sempre que uma posição for concluída a plataforma Acesso RH faz uma notificação **PUSH** para o endereço configurado no painel.
 Acesse o painel administrativo e cadastre uma URL apta a receber uma requisição POST, com isto a API da acesso RH enviará a seguinte requisição para a URL especificada:
 
 ```
-POST {url_especificada} HTTP/1.1
+POST {url especificada} HTTP/1.1
 Content-Type: application/json;
 
 {
@@ -58,17 +57,17 @@ Content-Type: application/json;
 }
 ```
 
-Se espera receber o seguinte resultado do cliente:
+A Plataform Acesso RH espera receber o seguinte resultado do cliente:
 
-```go
+```
 HTTP/1.1 200 OK
 ```
 
-Sempre que uma posição for concluída a plataforma Acesso RH faz uma notificação **PUSH** para o endereço configurado no painel.
+Caso a URL configurada para **PUSH** não retorne o status descrito acima uma nova tentativa será realizada até que o status retornado seja o esperado (limitado a 10 requisições).
 
 ### Consultando uma posição
 
-Após o recebimento da notificação, é possível utilizar os dados recebidos para fazer uma consulta dos dados na plataforma, para isto, basta fazer a seguinte requisição abaixo, porém informando na URL o valor recebido no campo `pos`:
+Após o recebimento da notificação, é possível utilizar os dados recebidos para fazer uma consulta na plataforma, para isto, basta fazer a requisição abaixo, porém informando na URL o valor recebido referente ao campo `pos`:
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{pos}'
@@ -76,7 +75,7 @@ curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/
 
 A requisição acima retornará um [JSON](#json) conforme o exemplo abaixo:
 
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -98,17 +97,17 @@ Content-Type: application/json
 }
 ```
 
-Além destes campos, é possível acrescentar outros opcionais:
+Além destes campos, é possível solicitar outros adicionais:
 
-- docs: A lista de documentos enviados pelo usuário (cpf, rg, endereço, etc)
-- role: O cargo que foi contratado
-- account: A conta na qual a posição foi adicionada
-- department: O Departamento
+- `docs`: A lista de documentos enviados pelo usuário (CPF, RG, etc...)
+- `account`: Os detalhes da conta na qual a posição foi criada
+- `department`: Os detalhes do departamento
+- `role`: Os detalhes do cargo
 
-Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los no request, colocando o parâmetro **include** da seguinte forma:
+Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los na solicitação informando o parâmetro **include**, da seguinte forma:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{uid_pos}?include=docs,account,role,department'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{pos}?include=docs,account,role,department'
 ```
 
 Exemplos:
@@ -116,12 +115,14 @@ Exemplos:
 ```
 GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
+
 ```
 GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
-Resultado em [JSON](#json) de todos campos adicionais:
 
-```go
+Exemplo de resultado em [JSON](#json) contendo todos os campos adicionais:
+
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
