@@ -5,10 +5,12 @@
 ## Índice
 
 ##### 1. [**Glossário**](#glossário)
+##### 1. [**Ativação da API**](#ativação-da-api)
 ##### 2. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 3. [**Consultando uma posição**](#consultando-uma-posição)
 ##### 4. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
-##### 5. [**Tokens de autenticação**](#token-de-autenticação)
+##### 5. [**Consultando uma conta**](#consultando-uma-conta)
+##### 6. [**Consultando multiplas contas**](#consultando-multiplas-contas)
 
 ### Glossário
 
@@ -25,10 +27,41 @@
 
 
 <a id="json">JSON:</a>
-: Json é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
+: JSON é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
 
+<a id="timestamps">Timestamps</a>
+:  O formato de data/tempo que utilizamos é em padrão UTC:
+```go
+"2005-10-30 10:45:00.000"
+```
 
+### Ativação da API
 
+A ativação da API é feita via dashboard. Clicando em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informações:
+
+- Contas: As contas que poderão ser acessadas, e as respectivas posições.
+- Duração Token: O tempo de expiração do token.
+
+Após o preenchimento é gerado um refresh token. Este refresh token é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição para adquirir o token final:
+
+```
+curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
+```
+
+A resposta trás o token final e a data de expiração:
+
+Resultado em [JSON](#json):
+
+```go
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
+  "exp": "2017-05-08 00:00:00.000Z",
+}
+```
+
+Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição via dashboard de autenticação pra adquiririr um novo refresh token.
 
 
 
@@ -58,7 +91,7 @@ Após o recebimento da uid_pos, (UID da posição) é possível utilizá-la para
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{uid_pos}'
 ```
 
-A requisição acima retornará um [Json](#json) com o seguinte valor da posição:
+A requisição acima retornará um [JSON](#json) com o seguinte valor da posição:
 
 ```go
 HTTP/1.1 200 OK
@@ -103,7 +136,7 @@ GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
-Resultado em [Json](#json) de todos campos adicionais:
+Resultado em [JSON](#json) de todos campos adicionais:
 
 ```go
 HTTP/1.1 200 OK
@@ -408,10 +441,10 @@ Content-Type: application/json
 É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão do token). Para isto enviar a seguinte requisição:
 
 ```
-POST curl -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
 ```
 
-Esta requisição responderá um [Json](#json) com objeto, cabeçalho e uma lista de posições:
+Esta requisição responderá um [JSON](#json) com objeto, cabeçalho e uma lista de posições:
 
 ```go
 HTTP/1.1 200 OK
@@ -458,7 +491,7 @@ Content-Type: application/json
 }
 ```
 
-É possível filtrar a busca por **account**.
+É possível filtrar a busca por **contas**:
 
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'http://https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
@@ -471,7 +504,7 @@ Exemplo:
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
-Resultado em [Json](#json):
+Resultado em [JSON](#json):
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -499,52 +532,16 @@ Content-Type: application/json
   ]
 }
 ```
-
-### Consultando uma conta
-
-Para consultar uma conta é necessário ... (texto)
-
-```
-curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
-```
-
-Resultado da busca:
-
-Resultado em [Json](#json):
-```go
-HTTP/1.1 200 OK
-Content-Type: application/json
-{
-  "address": "Praça General Gentil Falcão",
-  "address2": "cj 199/2",
-  "brand": {
-    "url": "xxxxxxx"
-  },
-  "city": "São Paulo",
-  "cnpj": "xxxxxxxxx",
-  "district": "Cidade Monções",
-  "email": "acesso@io.com",
-  "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
-  "name": "Two and a Half",
-  "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-  "phone_number": "11 5678-1234",
-  "state": "São Paulo",
-  "trading_name": "Acesso IO LTDA",
-  "zip_code": "02234120"
-}
-```
-
 ### Consultando multiplas contas
 
-Para consultar uma conta é necessário ... (texto)
+Para consultar multiplas contas é necessário um token com permissão, que retornara as **contas da organização**.
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts'
 ```
 
-Resultado da busca:
 
-Resultado em [Json](#json):
+Resultado em [JSON](#json):
 
 ```go
 HTTP/1.1 200 OK
@@ -552,7 +549,7 @@ Content-Type: application/json
 [
  {
    "address": "Praça General Gentil Falcão",
-   "address2": "cj 199/2",
+   "address2": "000",
    "brand": {
      "url": "xxxxxxx"
    },
@@ -561,39 +558,62 @@ Content-Type: application/json
    "district": "Cidade Monções",
    "email": "acesso@io.com",
    "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
-   "name": "Two and a Half",
+   "name": "AcessoBIO",
    "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
-   "phone_number": "11 5678-1234",
+   "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
-   "zip_code": "02234120"
+   "zip_code": "0000000"
+ }
+ {
+   "address": "Praça General Gentil Falcão",
+   "address2": "000",
+   "brand": {
+     "url": "xxxxxxx"
+   },
+   "city": "São Paulo",
+   "cnpj": "xxxxxxxxx",
+   "district": "Cidade Monções",
+   "email": "acesso@io.com",
+   "id": "5f23faf1-170b-4f7a-a74b-a79cd9dad348",
+   "name": "AcessoRH",
+   "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+   "phone_number": "00 00000-0000",
+   "state": "São Paulo",
+   "trading_name": "Acesso IO LTDA",
+   "zip_code": "00000000"
  }
 ]
 ```
 
-### Ativação da API
+### Consultando uma conta
 
-A ativação da API é feita via dashboard. Clicando em empresas e na aba API preencha o formulário para a geração de um token de acesso. Para este formulario é necessário preencher as seguintes informaçes:
-- Contas: As contas que poderão ser acessadas, e as respectivas posições
-- Duração Token: O tempo de expiração do token
-
-Após o preenchimento é gerado um refresh token. Este refresh token é utilizado como uma pré autenticação na API, sendo necessário fazer uma requisição pra adquirir o token final:
+Para consultar uma conta é necessário um token com com permissão, e o UID de uma conta específica.
 
 ```
-curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br/v1/auth'
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
 ```
 
-A resposta trás o token e a data de expiração:
-
-Resultado em [Json](#json):
-
+Resultado em [JSON](#json):
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
-  "exp": "2017-05-08 00:00:00.000Z",
+  "address": "Praça General Gentil Falcão",
+  "address2": "000",
+  "brand": {
+    "url": "xxxxxxx"
+  },
+  "city": "São Paulo",
+  "cnpj": "xxxxxxxxx",
+  "district": "Cidade Monções",
+  "email": "acesso@io.com",
+  "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
+  "name": "xyz",
+  "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "phone_number": "00 00000-0000",
+  "state": "São Paulo",
+  "trading_name": "Acesso IO LTDA",
+  "zip_code": "00000000"
 }
 ```
-
-Este é o token usado para fazer as chamadas REST durante seu tempo de validade. Quando o token expirar, é necessário fazer outra requisição ao endpoint de autenticação pra adquiririr um token novo.
