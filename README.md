@@ -38,7 +38,16 @@ O Acesso RH disponibiliza uma plataforma para verificar a **conclusão** de um c
 Para isto basta fornecer uma URL apta a receber uma requisição POST, com isto a API da acessoRH enviará a seguinte requisição:
 
 ```
-POST curl 'http://{sua URL}' -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
+POST {sua URL} -d '{org:xxxx-xxxxx-xxxx-xxxx,acc:xxxx-xxxx-xxxx-xxxx,pos:xxxx-xxxx-xxxx-xxxx}'
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+e espera receber o seguinte resultado do cliente:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
 ```
 
 Sempre que uma posição for concluída a API procurará as URLs cadastradas relativas a esta posição e enviará a informação por [chamada REST](#chamada_rest).
