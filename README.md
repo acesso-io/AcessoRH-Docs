@@ -7,7 +7,7 @@
 ##### 1. [**Glossário**](#glossário)
 ##### 2. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
 ##### 3. [**Consultando uma posição**](#consultando-uma-posição)
-##### 4. [**Consultando múltiplas requisições**](#consultando-múltiplas-requisições)
+##### 4. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
 ##### 5. [**Tokens de autenticação**](#token-de-autenticação)
 
 ### Glossário
@@ -396,7 +396,7 @@ Content-Type: application/json
 
 ```
 
-### Consultando múltiplas requisições
+### Consultando múltiplas posições
 
 É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão do token). Para isto enviar a seguinte requisição:
 
@@ -468,6 +468,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "count":1,
+  "offset":0,
   "positions":[
     {
       "_id":UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
@@ -487,6 +488,40 @@ Content-Type: application/json
       "_updated":"2017-07-19 19:03:24.216Z"
     }
   ]
+}
+```
+
+### Consultando uma conta
+
+Para consultar uma conta é necessário ... (texto)
+
+```
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
+```
+
+Resultado da busca:
+
+Resultado em [Json](#json):
+```go
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "address": "Praça General Gentil Falcão",
+  "address2": "cj 199/2",
+  "brand": {
+    "url": "xxxxxxx"
+  },
+  "city": "São Paulo",
+  "cnpj": "xxxxxxxxx",
+  "district": "Cidade Monções",
+  "email": "acesso@io.com",
+  "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
+  "name": "Two and a Half",
+  "org": UUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "phone_number": "11 5678-1234",
+  "state": "São Paulo",
+  "trading_name": "Acesso IO LTDA",
+  "zip_code": "02234120"
 }
 ```
 
