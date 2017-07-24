@@ -457,7 +457,9 @@ Content-Type: application/json
   ]
 }
 ```
+
 É possível filtrar a busca por **account**.
+
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'http://https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
@@ -538,10 +540,12 @@ Para consultar uma conta é necessário ... (texto)
 
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts'
+```
 
 Resultado da busca:
 
 Resultado em [Json](#json):
+
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -566,7 +570,6 @@ Content-Type: application/json
  }
 ]
 ```
-```
 
 ### Ativação da API
 
@@ -583,6 +586,7 @@ curl -X GET  -H "Authorization: Bearer {ref_token}" 'https://api.acessorh.com.br
 A resposta trás o token e a data de expiração:
 
 Resultado em [Json](#json):
+
 ```go
 HTTP/1.1 200 OK
 Content-Type: application/json
