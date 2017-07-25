@@ -371,38 +371,38 @@ Content-Type: application/json
   "count": 2,
   "positions": [
     {
-      "_id":"22a2ceb7-418f-4501-aa91-52064f269743",
-      "profile":{
-        "name":"xxx",
-        "email":"acesso@io.com",
-        "mobile":"11 12345 1234"
+      "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "profile": {
+        "name": "xxx",
+        "email": "acesso@io.com",
+        "mobile": "11 12345 1234"
       },
-      "sms_sent":"11 12345 1234",
-      "email_sent":"acesso@io.com",
-      "jornada":"Descrição da jornada",
-      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
-      "status":240,
-      "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
-      "admission_date":"2018-08-08 00:00:00.000Z",
-      "_created":"2017-07-17 19:03:24.216Z",
-      "_updated":"2017-07-17 19:03:24.216Z"
+      "sms_sent": "11 12345 1234",
+      "email_sent": "acesso@io.com",
+      "jornada": "Descrição da jornada",
+      "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "status": 240,
+      "pagamento": {"vinculo":"clt","valor":"R$ 4.321,00"},
+      "admission_date": "2018-08-08 00:00:00.000Z",
+      "_created": "2017-07-17 19:03:24.216Z",
+      "_updated": "2017-07-17 19:03:24.216Z"
     },
     {
-      "_id": ("22a2ceb7-418f-4501-aa91-52064f269743"),
-      "profile":{
-        "name":"xyz",
-        "email":"acesso@io.com",
-        "mobile":"11 54321 4321"
+      "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "profile": {
+        "name": "xyz",
+        "email": "acesso@io.com",
+        "mobile": "11 54321 4321"
       },
-      "sms_sent":"11 54321 4321",
-      "email_sent":"acesso@io.com",
-      "jornada":"Descrição da jornada",
-      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
-      "status":240,
-      "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
-      "admission_date":"2017-05-08 00:00:00.000Z",
-      "_created":"2017-07-19 19:03:24.216Z",
-      "_updated":"2017-07-19 19:03:24.216Z"
+      "sms_sent": "11 54321 4321",
+      "email_sent": "acesso@io.com",
+      "jornada": "Descrição da jornada",
+      "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "status": 240,
+      "pagamento": {"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date": "2017-05-08 00:00:00.000Z",
+      "_created": "2017-07-19 19:03:24.216Z",
+      "_updated": "2017-07-19 19:03:24.216Z"
     }
   ]
 }
@@ -426,25 +426,25 @@ Resultado em [JSON](#json):
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "count":1,
-  "offset":0,
-  "positions":[
+  "count": 1,
+  "offset": 0,
+  "positions": [
     {
-      "_id":"22a2ceb7-418f-4501-aa91-52064f269743",
-      "profile":{
-        "name":"xyz",
-        "email":"acesso@io.com",
-        "mobile":"11 54321 4321"
+      "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "profile": {
+        "name": "xyz",
+        "email": "acesso@io.com",
+        "mobile": "11 54321 4321"
       },
-      "sms_sent":"11 54321 4321",
-      "email_sent":"acesso@io.com",
-      "jornada":"Descrição da jornada",
-      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
-      "status":240,
-      "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
-      "admission_date":"2017-05-08 00:00:00.000Z",
-      "_created":"2017-07-19 19:03:24.216Z",
-      "_updated":"2017-07-19 19:03:24.216Z"
+      "sms_sent": "11 54321 4321",
+      "email_sent": "acesso@io.com",
+      "jornada": "Descrição da jornada",
+      "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "status": 240,
+      "pagamento": {"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date": "2017-05-08 00:00:00.000Z",
+      "_created": "2017-07-19 19:03:24.216Z",
+      "_updated": "2017-07-19 19:03:24.216Z"
     }
   ]
 }
