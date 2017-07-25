@@ -242,7 +242,7 @@ Content-Type: application/json
     },
     "pessoal": {
       "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "nome": "xyz",
+      "nome": "Fulano de Tal",
       "nome_social": null,
       "nome_mae": "zyx",
       "nome_pai": null,
@@ -347,8 +347,8 @@ Content-Type: application/json
     "code": 400,
     "name": "active"
   },
-  "updated": "2017-07-20T17:12:11.264-03:00",
-  "created": "2017-07-20T17:12:11.264-03:00"
+  "_updated": "2017-07-20T17:12:11.264-03:00",
+  "_created": "2017-07-20T17:12:11.264-03:00"
 }
 ```
 
@@ -367,11 +367,11 @@ Esta requisição responderá um [JSON](#json) com objeto, cabeçalho e uma list
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "offset":0,
-  "count":2,
-  "positions":[
+  "offset": 0,
+  "count": 2,
+  "positions": [
     {
-      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "profile":{
         "name":"xxx",
         "email":"acesso@io.com",
@@ -388,7 +388,7 @@ Content-Type: application/json
       "_updated":"2017-07-17 19:03:24.216Z"
     },
     {
-      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
       "profile":{
         "name":"xyz",
         "email":"acesso@io.com",
@@ -397,7 +397,7 @@ Content-Type: application/json
       "sms_sent":"11 54321 4321",
       "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":("12345678-1234-1234-1234-123456789123"),
+      "acc":"12345678-1234-1234-1234-123456789123",
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date":"2017-05-08 00:00:00.000Z",
@@ -430,7 +430,7 @@ Content-Type: application/json
   "offset":0,
   "positions":[
     {
-      "_id":("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "profile":{
         "name":"xyz",
         "email":"acesso@io.com",
@@ -468,7 +468,7 @@ Content-Type: application/json
    "address": "Praça General Gentil Falcão",
    "address2": "000",
    "brand": {
-     "url": "xxxxxxx"
+     "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
    },
    "city": "São Paulo",
    "cnpj": "xxxxxxxxx",
@@ -476,17 +476,17 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
    "name": "AcessoBIO",
-   "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+   "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
    "zip_code": "0000000"
- }
+ },
  {
    "address": "Praça General Gentil Falcão",
    "address2": "000",
    "brand": {
-     "url": "xxxxxxx"
+     "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
    },
    "city": "São Paulo",
    "cnpj": "xxxxxxxxx",
@@ -494,7 +494,7 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "5f23faf1-170b-4f7a-a74b-a79cd9dad348",
    "name": "AcessoRH",
-   "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+   "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
@@ -517,20 +517,20 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "address": "Praça General Gentil Falcão",
-  "address2": "000",
+  "address2": "cj 123/4",
   "brand": {
-    "url": "xxxxxxx"
+    "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
   },
   "city": "São Paulo",
   "cnpj": "xxxxxxxxx",
   "district": "Cidade Monções",
-  "email": "acesso@io.com",
+  "email": "contato@acesso.io",
   "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
-  "name": "xyz",
-  "org": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+  "name": "Acesso",
+  "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "phone_number": "00 00000-0000",
   "state": "São Paulo",
-  "trading_name": "Acesso IO LTDA",
+  "trading_name": "Acesso SA LTDA",
   "zip_code": "00000000"
 }
 ```
