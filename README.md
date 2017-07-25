@@ -363,7 +363,7 @@ curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/a
 
 Esta requisição responderá um [JSON](#json) com objeto, cabeçalho e uma lista de posições:
 
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -422,7 +422,7 @@ Exemplo:
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
 Resultado em [JSON](#json):
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -460,7 +460,7 @@ curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/
 
 Resultado em [JSON](#json):
 
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 [
@@ -512,7 +512,7 @@ curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/
 ```
 
 Resultado em [JSON](#json):
-```go
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
