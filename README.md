@@ -81,7 +81,7 @@ A requisição acima retornará um [JSON](#json) conforme o exemplo abaixo:
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
   "profile": {
     "name": "xxx",
     "email": "acesso@io.com",
@@ -90,7 +90,7 @@ Content-Type: application/json
   "sms_sent": "11 12345 1234",
   "email_sent": "acesso@io.com",
   "jornada": "Descrição da jornada",
-  "acc": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
   "status": 240,
   "pagamento": { "vinculo": "clt", "valor": "R$ 4.321,00" },
   "admission_date": "2018-08-08 00:00:00.000Z",
@@ -129,7 +129,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "account": {
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "id": "22a2ceb7-418f-4501-aa91-52064f269743",
     "name": "zyx",
     "trading_name": "xyz CO",
     "phone_number": "11 xxxx-xxxx",
@@ -144,17 +144,17 @@ Content-Type: application/json
       "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
     },
     "cnpj": "",
-    "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    "org": "22a2ceb7-418f-4501-aa91-52064f269743"
   },
   "admission_date": "2018-08-07T21:00:00-03:00",
   "department": {
-    "account": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "account": "22a2ceb7-418f-4501-aa91-52064f269743",
+    "id": "22a2ceb7-418f-4501-aa91-52064f269743",
     "name": "Depto Pessoal"
   },
   "docs": {
     "alistamento": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "ra": "123123",
       "numero": "00000000000",
       "serie": null,
@@ -166,7 +166,7 @@ Content-Type: application/json
       }
     },
     "banco": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "banco": "xyz",
       "agencia": "0000",
       "conta": "00000",
@@ -176,7 +176,7 @@ Content-Type: application/json
       }
     },
     "carteira_trabalho": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000000",
       "serie": "123",
       "uf": "SP",
@@ -192,7 +192,7 @@ Content-Type: application/json
       }
     },
     "cnh": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000000",
       "validade": "2016-01-11T22:00:00-02:00",
       "data_emissao": "2016-01-11T22:00:00-02:00",
@@ -208,14 +208,14 @@ Content-Type: application/json
       }
     },
     "cpf": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000000",
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "endereco": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "cep": "00000000",
       "logradouro": "Rua dos famosos",
       "numero": "313",
@@ -228,20 +228,20 @@ Content-Type: application/json
       }
     },
     "escolaridade": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "instrucao": "superior-incompleto",
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "nascimento": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "pessoal": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "nome": "Fulano de Tal",
       "nome_social": null,
       "nome_mae": "zyx",
@@ -263,14 +263,14 @@ Content-Type: application/json
       }
     },
     "pis": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000",
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "rg": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "0000000000",
       "orgao_emissor": "LA",
       "uf": "LA",
@@ -285,21 +285,21 @@ Content-Type: application/json
       }
     },
     "sindicato": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "contribuinte": false,
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "sus": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000000",
       "foto1": {
         "url": "https://api.acessorh.com.br/v1/files/caminho-do-arquivo.jpg"
       }
     },
     "titulo_eleitor": {
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "22a2ceb7-418f-4501-aa91-52064f269743",
       "numero": "00000000",
       "zona": "11",
       "secao": "000",
@@ -319,10 +319,10 @@ Content-Type: application/json
     "comprovante": {
       "url": null
     },
-    "clinica": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "clinica": "22a2ceb7-418f-4501-aa91-52064f269743",
     "observacoes": "Ligar e agendar"
   },
-  "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "id": "22a2ceb7-418f-4501-aa91-52064f269743",
   "jornada": "Trabalha cinco dias por semana",
   "pagamento": {
     "vinculo": "clt",
@@ -339,8 +339,8 @@ Content-Type: application/json
     }
   },
   "role": {
-    "account": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "account": "22a2ceb7-418f-4501-aa91-52064f269743",
+    "id": "22a2ceb7-418f-4501-aa91-52064f269743",
     "name": "Assistente administrativo"
   },
   "status": {
@@ -371,7 +371,7 @@ Content-Type: application/json
   "count": 2,
   "positions": [
     {
-      "_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "_id":"22a2ceb7-418f-4501-aa91-52064f269743",
       "profile":{
         "name":"xxx",
         "email":"acesso@io.com",
@@ -380,7 +380,7 @@ Content-Type: application/json
       "sms_sent":"11 12345 1234",
       "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":("56786739-8916-7259-6730-815092597835"),
+      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 4.321,00"},
       "admission_date":"2018-08-08 00:00:00.000Z",
@@ -388,7 +388,7 @@ Content-Type: application/json
       "_updated":"2017-07-17 19:03:24.216Z"
     },
     {
-      "_id": ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"),
+      "_id": ("22a2ceb7-418f-4501-aa91-52064f269743"),
       "profile":{
         "name":"xyz",
         "email":"acesso@io.com",
@@ -397,7 +397,7 @@ Content-Type: application/json
       "sms_sent":"11 54321 4321",
       "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":"12345678-1234-1234-1234-123456789123",
+      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date":"2017-05-08 00:00:00.000Z",
@@ -430,7 +430,7 @@ Content-Type: application/json
   "offset":0,
   "positions":[
     {
-      "_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "_id":"22a2ceb7-418f-4501-aa91-52064f269743",
       "profile":{
         "name":"xyz",
         "email":"acesso@io.com",
@@ -439,7 +439,7 @@ Content-Type: application/json
       "sms_sent":"11 54321 4321",
       "email_sent":"acesso@io.com",
       "jornada":"Descrição da jornada",
-      "acc":("12345678-1234-1234-1234-123456789123"),
+      "acc":"22a2ceb7-418f-4501-aa91-52064f269743",
       "status":240,
       "pagamento":{"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date":"2017-05-08 00:00:00.000Z",
@@ -476,7 +476,7 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
    "name": "AcessoBIO",
-   "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+   "org": "22a2ceb7-418f-4501-aa91-52064f269743",
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
@@ -494,7 +494,7 @@ Content-Type: application/json
    "email": "acesso@io.com",
    "id": "5f23faf1-170b-4f7a-a74b-a79cd9dad348",
    "name": "AcessoRH",
-   "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+   "org": "22a2ceb7-418f-4501-aa91-52064f269743",
    "phone_number": "00 00000-0000",
    "state": "São Paulo",
    "trading_name": "Acesso IO LTDA",
@@ -508,7 +508,7 @@ Content-Type: application/json
 Para consultar uma conta é necessário um [token](#token) com permissão, e o UID de uma conta específica.
 
 ```
-curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{uid_acc}'
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{acc}'
 ```
 
 Resultado em [JSON](#json):
@@ -527,7 +527,7 @@ Content-Type: application/json
   "email": "contato@acesso.io",
   "id": "2f23fff1-170b-4e7a-a74b-a79aa9dad418",
   "name": "Acesso",
-  "org": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "org": "22a2ceb7-418f-4501-aa91-52064f269743",
   "phone_number": "00 00000-0000",
   "state": "São Paulo",
   "trading_name": "Acesso SA LTDA",
