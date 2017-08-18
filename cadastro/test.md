@@ -2,7 +2,7 @@
 
  Documentação para requisição de cadastramento de usuários em lote.
 
-###**Modelo de envio**
+### **Modelo de envio**
 
 O cadastramento em lote é feito através do envio de um arquivo .csv com as tags dos campos, separados por colunas.
 
@@ -11,7 +11,7 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 - Precisa ser um arquivo CSV válido
 - Não importa a ordem dos campos
 
-###**Descrição de cada campo:**
+### **Descrição de cada campo:**
 
 |Tag|Descrição|
 |--------|-----|
@@ -26,7 +26,8 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 |contato_nome| Texto com no máximo 255 caracteres.
 |contato_email|Email válido.
 |contato_celular|Número respeitando a mascara: (##) 9####-####
-###**Descrição de cada documento adicional:**
+
+### **Descrição de cada documento adicional:**
 
 |Tag|Documento|
 |--------|-----|
@@ -48,9 +49,11 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 
 
 **Formatação de linha CSV:**
+
 ```
 empresa,departamento,cargo,data_limite,jornada,documentos_extra,pagamento_vinculo,pagamento_valor,pagamento_recorrencia,contato_nome,contato_email,contato_celular
 ```
+
 **Exemplo:**
 ```
 "Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","oab|antecedentes_federal|antecedentes_estadual","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000"
