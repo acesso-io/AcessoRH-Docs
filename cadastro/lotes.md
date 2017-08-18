@@ -4,9 +4,22 @@
 
 ### **Modelo de envio**
 
-O cadastramento em lote é feito através do envio de um arquivo .csv com as tags dos campos, separados por colunas.
+O cadastramento em lote é feito através do envio de um arquivo .csv com as tags dos campos, separados por vírgula.
+
+
+**Formatação de linha CSV:**
+
+```
+empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor,pagamento_recorrencia,contato_nome,contato_email,contato_celular,documentos_extra
+```
+
+**Exemplo:**
+```
+"Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000","oab|antecedentes_federal|antecedentes_estadual"
+```
 
 **Considerações gerais:**
+
 - O arquivo precisa estar no formato UTF-8
 - Precisa ser um arquivo CSV válido
 - Não importa a ordem dos campos
@@ -46,16 +59,4 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 |vacinacao|Comprovante de Vacinação
 |vigilante|Certificado de Vigilante
 |receita_federal|Cadastro na Receita Federal
-
-
-**Formatação de linha CSV:**
-
-```
-empresa,departamento,cargo,data_limite,jornada,documentos_extra,pagamento_vinculo,pagamento_valor,pagamento_recorrencia,contato_nome,contato_email,contato_celular
-```
-
-**Exemplo:**
-```
-"Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","oab|antecedentes_federal|antecedentes_estadual","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000"
-```
 
