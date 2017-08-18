@@ -10,7 +10,9 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 - O arquivo precisa estar no formato UTF-8
 - Precisa ser um arquivo CSV válido
 - Não importa a ordem dos campos
+
 ###**Descrição de cada campo:**
+
 |Tag|Descrição|
 |--------|-----|
 |empresa|Texto exato, diferenciando caracteres maiusculo de minusculo.
@@ -25,6 +27,7 @@ O cadastramento em lote é feito através do envio de um arquivo .csv com as tag
 |contato_email|Email válido.
 |contato_celular|Número respeitando a mascara: (##) 9####-####
 ###**Descrição de cada documento adicional:**
+
 |Tag|Documento|
 |--------|-----|
 |oab|OAB
