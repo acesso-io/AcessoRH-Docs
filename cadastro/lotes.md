@@ -23,7 +23,7 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 - O arquivo precisa estar no formato UTF-8
 - Precisa ser um arquivo CSV válido
 - Os campos precisam seguir a ordem, como no exemplo
-- Os documentos adicionais devem ser separados por | (pipe)
+- Os documentos adicionais devem ser separados por `|` (pipe)
 
 ### **Descrição de cada campo:**
 
