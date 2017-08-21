@@ -12,7 +12,6 @@
 ##### 6. [**Consultando uma conta**](#consultando-uma-conta)
 ##### 7. [**Glossário**](#glossário)
 
-
 ### Ativação da API
 
 A ativação da API é feita via dashboard. Clique em empresas e na aba API preencha o formulário para a geração de um [token](#token) de acesso. Para este formulário é necessário preencher as seguintes informações:
@@ -28,7 +27,6 @@ curl -X GET  -H "Authorization: Bearer {refresh token}" 'https://api.acessorh.co
 
 A resposta traz o [token](#token) final e a data de expiração em [JSON](#json):
 
-
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -39,7 +37,6 @@ Content-Type: application/json
 ```
 
 Este é o token usado para fazer as [chamadas REST](#chamada_rest) durante seu tempo de validade. Quando o [token](#token) expirar, é necessário fazer outra requisição utilizando um [refresh token](#refresh_token).
-
 
 ### Recebendo notificação de posições concluídas
 
@@ -421,7 +418,9 @@ Exemplo:
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678-1234-1234-1234-123456789123'
 ```
+
 Resultado em [JSON](#json):
+
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -449,6 +448,7 @@ Content-Type: application/json
   ]
 }
 ```
+
 ### Consultando múltiplas contas
 
 Para consultar múltiplas contas é necessário um [token](#token) com permissão, que retornara as **contas da organização**.
@@ -456,7 +456,6 @@ Para consultar múltiplas contas é necessário um [token](#token) com permissã
 ```
 curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts'
 ```
-
 
 Resultado em [JSON](#json):
 
@@ -512,6 +511,7 @@ curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/
 ```
 
 Resultado em [JSON](#json):
+
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -540,7 +540,6 @@ Content-Type: application/json
 <a id="chamada_rest">Chamada REST:</a>
 : Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
-
 |Comandos|Descrição|
 |--------|-----|
 |GET     |Usado para retornar informação.
@@ -563,4 +562,4 @@ Content-Type: application/json
 : O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
 
 <a id="refresh_token">Refresh Token</a>
-: Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso. 
+: Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso.
