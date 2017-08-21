@@ -538,8 +538,7 @@ Content-Type: application/json
 ### Glossário
 
 <a id="chamada_rest">Chamada REST</a>
-
-Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
+: Na chamada REST as informações são acessadas através de endpoints em formato HTTPS, utilizando os seguintes comandos para realizar as ações:
 
 |Comandos|Descrição|
 |--------|-----|
@@ -550,21 +549,17 @@ Na chamada REST as informações são acessadas através de endpoints em formato
 
 
 <a id="json">JSON</a>
-
-JSON é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
+: JSON é uma formatação leve de troca de dados. Para seres humanos, é fácil de ler e escrever. Para máquinas, é fácil de interpretar e gerar. Está baseado em um subconjunto da linguagem de programação JavaScript.
 
 <a id="timestamps">Timestamps</a>
-
-O formato de data e hora que utilizamos é o padrão [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) com fuso horário em UTC. Ex.:
+: O formato de data e hora que utilizamos é o padrão [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) com fuso horário em UTC. Ex.:
 
 ```json
 "2005-10-30 10:45:00.000"
 ```
 
 <a id="token">Token</a>
-
-O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
+: O Token é uma chave de acesso gerada apartir de um Refresh Token. Através do Token é possivel acessar a API e realizar [chamadas REST](#chamada_rest).
 
 <a id="refresh_token">Refresh Token</a>
-
-Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso.
+: Refresh Token é um token especial gerado no dashboard da organização, que contem as informações necessárias para gerar um token de acesso.
