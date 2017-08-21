@@ -7,7 +7,7 @@
 O cadastramento em lote é feito através do envio de um arquivo .csv com as tags dos campos, separados por vírgula.
 
 
-**Formatação de linha CSV:**
+**Colunas do arquivo CSV:**
 
 ```
 empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor,pagamento_recorrencia,contato_nome,contato_email,contato_celular,documentos_extra
@@ -22,7 +22,8 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 
 - O arquivo precisa estar no formato UTF-8
 - Precisa ser um arquivo CSV válido
-- Não importa a ordem dos campos
+- Os campos precisam seguir a ordem, como no exemplo
+- Os documentos adicionais devem ser separados por | (pipe)
 
 ### **Descrição de cada campo:**
 
