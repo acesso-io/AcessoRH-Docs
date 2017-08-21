@@ -1,6 +1,6 @@
-# **Importação de cadastros em lote**
+# **Importação em lote**
 
- Documentação para requisição de cadastramento de usuários em lote.
+ Documentação para requisição de cadastramento de funcionários em lote.
 
 ### **Modelo de envio**
 
