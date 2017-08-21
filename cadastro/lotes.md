@@ -15,16 +15,16 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 **Exemplo:**
 
 ```
-"Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000","oab|antecedentes_federal|antecedentes_estadual"
+"Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000","oab;antecedentes_federal;antecedentes_estadual"
 ```
 
 **Considerações gerais:**
 
-- O arquivo deve estar no formato UTF-8
-- Precisa ser um arquivo CSV válido
-- Os campos precisam seguir exatamente a ordem, conforme no exemplo
-- Os documentos adicionais devem ser separados por `|` (pipe)
-- Os campos descritos como **"Texto exato"** devem corresponder exatamente ao cadastrado na plataforma
+- O arquivo deve estar no formato UTF-8.
+- Precisa ser um arquivo CSV válido.
+- Os campos precisam seguir exatamente a ordem, conforme no exemplo.
+- Os documentos adicionais devem ser separados por `;` (ponto e vírgula).
+- Os campos descritos como **"Texto exato"** devem corresponder exatamente ao cadastrado na plataforma.
 
 ### **Descrição de cada campo:**
 
@@ -41,7 +41,7 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 |contato_nome|Texto com no máximo 255 caracteres.|
 |contato_email|E-mail válido.|
 |contato_celular|Número respeitando a máscara: (##) 9####-####|
-|documentos_extra|Lista de documentos adicionais separados por `|` (pipe), conforme tabela abaixo.|
+|documentos_extra|Lista de documentos adicionais separados por `;` (ponto e vírgula), conforme tabela abaixo.|
 
 ### **Descrição de cada documento adicional:**
 
