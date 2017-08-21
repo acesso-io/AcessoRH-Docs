@@ -4,8 +4,7 @@
 
 ### **Modelo de envio**
 
-O cadastramento em lote é feito através do envio de um arquivo .csv com as tags dos campos, separados por vírgula.
-
+O cadastramento em lote é feito através do envio de um arquivo `.csv` com as tags dos campos, separados por vírgula.
 
 **Colunas do arquivo CSV:**
 
@@ -14,6 +13,7 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 ```
 
 **Exemplo:**
+
 ```
 "Acesso Digital","Almoxarifado","Repositor",2017-08-30,"Segunda a sexta","clt",2000.00,mensalista,"João da Silva","joao.da.silva@host.com","(11) 90000-0000","oab|antecedentes_federal|antecedentes_estadual"
 ```
@@ -34,10 +34,10 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 |departamento|Texto exato, diferenciando caracteres maiúsculos de minúsculos.
 |data_limite|Formato (YYYY-MM-DD).
 |jornada|Texto com no máximo 255 caracteres.
-|pagamento_vinculo| Uma das opções: clt, estágio, aprendiz, autônomo, temporário.
+|pagamento_vinculo|Uma das opções: clt, estágio, aprendiz, autônomo, temporário.
 |pagamento_recorrencia|Uma das opções: horista, mensalista, aulista, comissionista, diarista.
 |pagamento_valor|Decimal separado por ponto. Exemplo: 2000.00
-|contato_nome| Texto com no máximo 255 caracteres.
+|contato_nome|Texto com no máximo 255 caracteres.
 |contato_email|E-mail válido.
 |contato_celular|Número respeitando a máscara: (##) 9####-####
 
@@ -60,4 +60,3 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 |vacinacao|Comprovante de Vacinação
 |vigilante|Certificado de Vigilante
 |receita_federal|Comprovante de situação do cadastro na Receita Federal
-
