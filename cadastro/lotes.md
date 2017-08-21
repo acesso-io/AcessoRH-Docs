@@ -1,4 +1,4 @@
-# **Acesso RH - Cadastramento em lote**
+# **Importação de cadastros em lote**
 
  Documentação para requisição de cadastramento de usuários em lote.
 
@@ -22,8 +22,9 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 
 - O arquivo deve estar no formato UTF-8
 - Precisa ser um arquivo CSV válido
-- Os campos precisam seguir a ordem, como no exemplo
+- Os campos precisam seguir exatamente a ordem, conforme no exemplo
 - Os documentos adicionais devem ser separados por `|` (pipe)
+- Os campos descritos como **"Texto exato"** devem corresponder exatamente ao cadastrado na plataforma
 
 ### **Descrição de cada campo:**
 
