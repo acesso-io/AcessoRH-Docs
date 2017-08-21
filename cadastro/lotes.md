@@ -30,34 +30,35 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 
 |Tag|Descrição|
 |--------|-----|
-|empresa|Texto exato, diferenciando caracteres maiúsculos de minúsculos.
-|cargo|Texto exato, diferenciando caracteres maiúsculos de minúsculos.
-|departamento|Texto exato, diferenciando caracteres maiúsculos de minúsculos.
-|data_limite|Formato (YYYY-MM-DD).
-|jornada|Texto com no máximo 255 caracteres.
-|pagamento_vinculo|Uma das opções: clt, estágio, aprendiz, autônomo, temporário.
-|pagamento_recorrencia|Uma das opções: horista, mensalista, aulista, comissionista, diarista.
-|pagamento_valor|Decimal separado por ponto. Exemplo: 2000.00
-|contato_nome|Texto com no máximo 255 caracteres.
-|contato_email|E-mail válido.
-|contato_celular|Número respeitando a máscara: (##) 9####-####
+|empresa|Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
+|cargo|Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
+|departamento|Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
+|data_limite|Formato (YYYY-MM-DD).|
+|jornada|Texto com no máximo 255 caracteres.|
+|pagamento_vinculo|Uma das opções: clt, estágio, aprendiz, autônomo, temporário.|
+|pagamento_recorrencia|Uma das opções: horista, mensalista, aulista, comissionista, diarista.|
+|pagamento_valor|Decimal separado por ponto. Exemplo: 2000.00|
+|contato_nome|Texto com no máximo 255 caracteres.|
+|contato_email|E-mail válido.|
+|contato_celular|Número respeitando a máscara: (##) 9####-####|
+|documentos_extra|Lista de documentos adicionais separados por `\|` (pipe), conforme tabela abaixo.|
 
 ### **Descrição de cada documento adicional:**
 
 |Tag|Documento|
 |--------|-----|
-|oab|OAB - Ordem dos Advogados do Brasil
-|crc|CRC - Conselho Regional de Contabilidade
-|crf|CRF - Conselho Regional de Farmácia
-|cnv|Carteira Nacional de Vigilante
-|crea|CREA - Conselho Regional de Engenharia e Arquitetura
-|antecedentes_federal|Atestado de antecedentes criminais - Federal
-|antecedentes_estadual|Atestado de antecedentes criminais - Estadual
-|bombeiro|Certificado de Bombeiro
-|qualificacao_civil|Qualificação Civil (CTPS)
-|reciclagem|Certificado de Reciclagem
-|vspp|Certificado de Vigilante Segurança Pessoal Privado
-|ultimo_voto|Certidão de quitação eleitoral
-|vacinacao|Comprovante de Vacinação
-|vigilante|Certificado de Vigilante
-|receita_federal|Comprovante de situação do cadastro na Receita Federal
+|oab|OAB - Ordem dos Advogados do Brasil|
+|crc|CRC - Conselho Regional de Contabilidade|
+|crf|CRF - Conselho Regional de Farmácia|
+|cnv|Carteira Nacional de Vigilante|
+|crea|CREA - Conselho Regional de Engenharia e Arquitetura|
+|antecedentes_federal|Atestado de antecedentes criminais - Federal|
+|antecedentes_estadual|Atestado de antecedentes criminais - Estadual|
+|bombeiro|Certificado de Bombeiro|
+|qualificacao_civil|Qualificação Civil (CTPS)|
+|reciclagem|Certificado de Reciclagem|
+|vspp|Certificado de Vigilante Segurança Pessoal Privado|
+|ultimo_voto|Certidão de quitação eleitoral|
+|vacinacao|Comprovante de Vacinação|
+|vigilante|Certificado de Vigilante|
+|receita_federal|Comprovante de situação do cadastro na Receita Federal|
