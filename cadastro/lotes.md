@@ -41,7 +41,7 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 |contato_nome|Texto com no máximo 255 caracteres.|
 |contato_email|E-mail válido.|
 |contato_celular|Número respeitando a máscara: (##) 9####-####|
-|documentos_extra|Lista de documentos adicionais separados por `\|` (pipe), conforme tabela abaixo.|
+|documentos_extra|Lista de documentos adicionais separados por `|` (pipe), conforme tabela abaixo.|
 
 ### **Descrição de cada documento adicional:**
 
