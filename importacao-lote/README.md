@@ -30,7 +30,7 @@ empresa,departamento,cargo,data_limite,jornada,pagamento_vinculo,pagamento_valor
 
 |Tag|Descrição|
 |--------|-----|
-|empresa|Noma fantasia - Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
+|empresa|Nome fantasia - Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
 |cargo|Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
 |departamento|Texto exato, diferenciando caracteres maiúsculos de minúsculos.|
 |data_limite|Formato (YYYY-MM-DD).|
