@@ -112,11 +112,11 @@ curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/p
 Exemplos:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
+curl -X GET -H "Authorization: Bearer {token}" 'https:///api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 
 Exemplo de resultado em [JSON](#json) contendo todos os campos adicionais:
