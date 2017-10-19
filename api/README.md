@@ -408,7 +408,7 @@ Content-Type: application/json
 É possível filtrar a busca por **contas**:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'http://https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
 
 Nestas buscas **não pode ser passado como parâmetros os includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
