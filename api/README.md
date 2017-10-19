@@ -112,11 +112,11 @@ curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/p
 Exemplos:
 
 ```
-GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
+curl -X GET -H "Authorization: Bearer {token}" 'https://api/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
 ```
 
 ```
-GET api/V1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
+curl -X GET -H "Authorization: Bearer {token}" 'https://api/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
 ```
 
 Exemplo de resultado em [JSON](#json) contendo todos os campos adicionais:
@@ -355,7 +355,7 @@ Content-Type: application/json
 Para isto enviar a seguinte requisição:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/api/v1/positions'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions'
 ```
 
 Esta requisição responderá um [JSON](#json) com objeto, cabeçalho e uma lista de posições:
@@ -411,7 +411,7 @@ Content-Type: application/json
 curl -X GET -H "Authorization: Bearer {token}" 'http://https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
 
-Nestas buscas não pode ser passado como parâmetros os **includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
+Nestas buscas **não pode ser passado como parâmetros os includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
 
 Exemplo:
 
