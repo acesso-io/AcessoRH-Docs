@@ -103,20 +103,20 @@ Além destes campos, é possível solicitar outros adicionais:
 - `department`: Os detalhes do departamento
 - `role`: Os detalhes do cargo
 
-Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los na solicitação informando o parâmetro **include**, da seguinte forma:
+Caso queira acrescentar estes campos adicionais na resposta, basta inclui-los na solicitação informando o parâmetro **includes**, da seguinte forma:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{pos}?include=docs,account,role,department'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/{pos}?includes=docs,account,role,department'
 ```
 
 Exemplos:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=docs,account
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?includes=docs,account
 ```
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https:///api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?include=department,role
+curl -X GET -H "Authorization: Bearer {token}" 'https:///api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?includes=department,role
 ```
 
 Exemplo de resultado em [JSON](#json) contendo todos os campos adicionais:
