@@ -455,7 +455,7 @@ Nestas buscas **não pode ser passado como parâmetros os includes**, sendo que 
 Exemplo:
 
 ```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678-1234-1234-1234-123456789123'
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678123412341234123456789123'
 ```
 
 Resultado em [JSON](#json):
