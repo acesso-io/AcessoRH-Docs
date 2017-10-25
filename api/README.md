@@ -405,6 +405,45 @@ Content-Type: application/json
 }
 ```
 
+É possível adicionar **limit** e **skip** na busca. O **limit** limita a busca a um numero específico de posições, e o **skip** pula as X primeiras posições da busca.
+
+Exemplo:
+
+```
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?limit=1&skip=1'
+
+```
+
+Resultado em [JSON](#json):
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "offset": 0,
+  "count": 2,
+  "positions": [
+    {
+      "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "profile": {
+        "name": "xyz",
+        "email": "acesso@io.com",
+        "mobile": "11 54321 4321"
+      },
+      "sms_sent": "11 54321 4321",
+      "email_sent": "acesso@io.com",
+      "jornada": "Descrição da jornada",
+      "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "status": 240,
+      "pagamento": {"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date": "2017-05-08 00:00:00.000Z",
+      "_created": "2017-07-19 19:03:24.216Z",
+      "_updated": "2017-07-19 19:03:24.216Z"
+    }
+  ]
+}
+```
+
 É possível filtrar a busca por **contas**:
 
 ```
