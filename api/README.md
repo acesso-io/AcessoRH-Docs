@@ -351,8 +351,7 @@ Content-Type: application/json
 
 ### Consultando múltiplas posições
 
-É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão configurada).
-Para isto enviar a seguinte requisição:
+É possível consultar múltiplas posições relativas a uma conta ou organização (dependendo da permissão configurada). Nesta busca **não pode ser passado como parâmetros os includes**. Para isto enviar a seguinte requisição:
 
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions'
@@ -405,7 +404,7 @@ Content-Type: application/json
 }
 ```
 
-É possível adicionar **limit** e **skip** na busca. O **limit** limita a busca a um numero específico de posições, e o **skip** pula as X primeiras posições da busca.
+É possível adicionar **limit** e **skip** na busca. O **limit** limita a busca a um numero total de posições, e o **skip** pula as X primeiras posições da busca.
 
 Exemplo:
 
@@ -443,19 +442,45 @@ Content-Type: application/json
   ]
 }
 ```
+É possível filtrar a busca por **CPF**:
+
+```
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?cpf=xxxxxxxxxxx'
+```
+Resultado em [JSON](#json):
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "count": 1,
+  "offset": 0,
+  "positions": [
+    {
+      "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "profile": {
+        "name": "xyz",
+        "email": "acesso@io.com",
+        "mobile": "11 54321 4321"
+      },
+      "sms_sent": "11 54321 4321",
+      "email_sent": "acesso@io.com",
+      "jornada": "Descrição da jornada",
+      "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
+      "status": 240,
+      "pagamento": {"vinculo":"clt","valor":"R$ 5.000,00"},
+      "admission_date": "2017-05-08 00:00:00.000Z",
+      "_created": "2017-07-19 19:03:24.216Z",
+      "_updated": "2017-07-19 19:03:24.216Z"
+    }
+  ]
+}
+```
 
 É possível filtrar a busca por **contas**:
 
 ```
 curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-```
-
-Nestas buscas **não pode ser passado como parâmetros os includes**, sendo que estes apenas podem ser exibidos na busca por uma posição da account.
-
-Exemplo:
-
-```
-curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?acc=12345678123412341234123456789123'
 ```
 
 Resultado em [JSON](#json):
@@ -487,6 +512,12 @@ Content-Type: application/json
   ]
 }
 ```
+
+É possível utilizar todos os parametros em uma mesma chamada:
+```
+curl -X GET -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions?cpf=xxxxxxxxxxx&limit=10&skip=0&acc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+```
+
 
 ### Consultando múltiplas contas
 
@@ -546,7 +577,7 @@ Content-Type: application/json
 Para consultar uma conta é necessário um [token](#token) com permissão, e o UID de uma conta específica.
 
 ```
-curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/{acc}'
+curl -X GET  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 ```
 
 Resultado em [JSON](#json):
