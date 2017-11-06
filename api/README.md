@@ -422,7 +422,7 @@ Content-Type: application/json
 {
   "offset": 0,
   "limit": 1,
-  "count": 2,
+  "count": 1,
   "positions": [
     {
       "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
@@ -455,9 +455,9 @@ Resultado em [JSON](#json):
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "count": 1,
-  "limit": 100,
   "offset": 0,
+  "limit": 100,
+  "count": 1,
   "positions": [
     {
       "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
@@ -492,9 +492,9 @@ Resultado em [JSON](#json):
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
-  "count": 1,
-  "limit": 100,
   "offset": 0,
+  "limit": 100,  
+  "count": 1,
   "positions": [
     {
       "_id": "22a2ceb7-418f-4501-aa91-52064f269743",
