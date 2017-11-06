@@ -364,6 +364,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "offset": 0,
+  "limit": 100,
   "count": 2,
   "positions": [
     {
@@ -420,6 +421,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "offset": 0,
+  "limit": 1,
   "count": 2,
   "positions": [
     {
@@ -454,6 +456,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "count": 1,
+  "limit": 100,
   "offset": 0,
   "positions": [
     {
@@ -490,6 +493,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "count": 1,
+  "limit": 100,
   "offset": 0,
   "positions": [
     {
