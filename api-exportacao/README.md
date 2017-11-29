@@ -83,7 +83,7 @@ seguintes etapas:
 
 O Diagrama a seguir ilustra a sequência para a autenticação:
 
-![Diagrama](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/images/diagram.png)
+<img src="https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/images/diagram.png" style=" width:593px ; height:372px " />
 
 Exemplo do Payload Antes da codificação: 
 
