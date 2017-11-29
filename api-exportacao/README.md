@@ -179,14 +179,14 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
 
 * Limite de registros
   
-  A rótulo "limit" fornece opção de configurar um limite máximo de registros que devem vir no response. Porém, deve-se estar atento ao fato de que existe um limite máximo de **100** registros por requisição. Caso sejá nescessário consultar um número maior, deve-se utilizar o parâmero de "skip" comentado a seguir e realizar mais de uma consulta.
+  O rótulo "limit" fornece opção de configurar um limite máximo de registros que devem vir no response. Porém, deve-se estar atento ao fato de que existe um limite máximo de **100** registros por requisição. Caso sejá nescessário consultar um número maior, deve-se utilizar o parâmero de "skip" comentado a seguir e realizar mais de uma consulta.
 
   Obs. Por padrão, se o limite não for informado no corpo da requisição será utilizado um valor padrão de **50** registros. 
 
 
 * Skip
   
-  Caso seja nescessário realizar alguma paginação ou simplesmente recuperar um número superior ao limite de registros por requisição a aplicação deverá utilizar a rótulo "skip". Este permite que um dado número de registros seja desconsiderado na consulta.
+  Caso seja nescessário realizar alguma paginação ou simplesmente recuperar um número superior ao limite de registros por requisição a aplicação deverá utilizar o rótulo "skip". Este permite que um dado número de registros seja desconsiderado na consulta.
 
 
 * Modelo de exportação
