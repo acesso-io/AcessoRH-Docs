@@ -138,7 +138,7 @@ Exemplo do corpo da requisição em [JSON](#json):
   "limit": 100,
   "skip": 0,
   "template":"csv-v2.0",
-  "sort":"-created_at",
+  "sort":"-created",
   "status": ["archived"]
 }
 
@@ -167,7 +167,7 @@ Exemplo do corpo da requisição em [JSON](#json):
   "limit": 100,
   "skip": 0,
   "template":"csv-v2.0",
-  "sort":"-created_at",
+  "sort":"-created",
   "status": ["archived"]
 }
 
@@ -234,7 +234,7 @@ Exemplo:
   "limit": 100,
   "skip": 0,
   "template":"csv-v2.0",
-  "sort":"-created_at",
+  "sort":"-created",
   "status": ["pending","archived"]
 }
 
