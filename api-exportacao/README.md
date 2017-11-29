@@ -77,13 +77,14 @@ openssl req -x509 -new -nodes -sha1 -days 730 -newkey rsa:2048 \
 
 Após a criação e configuração de uma conta de serviço, sua aplicação precisa completar as
 seguintes etapas:
-###### 1. Criar um JSON Web Token (JWT), que inclui cabeçalho, payload e assinatura;
-###### 2. Requisitar um token de acesso (AccessToken) da plataforma de autenticação OAuth2;
+
+###### 1. Criar um JSON Web Token (JWT), que inclui cabeçalho, payload e assinatura.
+###### 2. Requisitar um token de acesso (AccessToken) da plataforma de autenticação OAuth2.
 ###### 3. Tratar a resposta JSON que a plataforma de autenticação retornará.Se na resposta estiver incluso um token de acesso, você poderá usar o token de acesso para fazer requisições às APIs dos produtos ACESSO para os quais a conta de serviço possui permissão de acesso. (Se na resposta não estiver incluso um token de acesso, seu JWT e requisição de obtenção do token podem estar incorretos ou a conta de serviço pode não ter as permissões necessárias para acessar os recursos solicitados.) Quando o token de acesso expira, sua aplicação cria um novo JWT, faz a assinatura e requisita um novo token de acesso.
 
 O Diagrama a seguir ilustra a sequência para a autenticação:
 
-<img src="https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/images/diagram.png" style=" width:593px ; height:372px " />
+![Diagram](/assets/images/diagram.png?raw=true "Diagram")
 
 Exemplo do Payload Antes da codificação: 
 
