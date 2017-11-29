@@ -53,7 +53,7 @@ keyUsage = critical, nonRepudiation, digitalSignature
 extendedKeyUsage = critical, clientAuth
 ```
 
-  Uma vez criado o arquivo openssl_idp.cnf basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruçoẽs da Tabela 1, para que o OpenSSL crie a chave pública/privada:
+  Uma vez criado o arquivo openssl_idp.cnf basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruções da tabela abaixo, para que o OpenSSL crie a chave pública/privada:
 
 | Parâmetro        | Valor           |
 | ------------- |:-------------:|
@@ -62,7 +62,7 @@ extendedKeyUsage = critical, clientAuth
 | -keyout       | O valor aqui, utilizando o exemplo anterior, deverá ser svcapp1.key.pem no lugar de service_account_name.key.pem.|
 | -out          | O valor aqui, utilizando o exemplo anterior, deverá ser svcapp1.cert.pem no lugar de service_account_name.cert.pem.|
 
-            Tabela 1
+
 
 ```
 openssl req -x509 -new -nodes -sha1 -days 730 -newkey rsa:2048 \
@@ -83,7 +83,7 @@ seguintes etapas:
 
 O Diagrama a seguir ilustra a sequência para a autenticação:
 
-![alt text](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/images/diagram.png "Diagrama")
+![Diagrama](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/images/diagram.png)
 
 Exemplo do Payload Antes da codificação: 
 
