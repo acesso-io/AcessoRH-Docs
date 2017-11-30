@@ -151,7 +151,7 @@ Exemplo do corpo da requisição em [JSON](#json):
 Para realizar a consulta em mais de uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de cada uma das contas. O corpo da requisição não se altera, basta apenas passar no corpo todos os UID's de contas desejados:
 
 ```
-curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/api/v2'
+curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions'
 ```
 
 
