@@ -1,6 +1,6 @@
 # **Acesso RH**
 ## Documentação
 
-- [API](api/README.md)
+- [API V1](api/v1/README.md)
+- [API V2](api/v2//README.md)
 - [Importação em lote](importacao-lote/README.md)
-- [API de exportação com layout customizável](api-exportacao/README.md)
