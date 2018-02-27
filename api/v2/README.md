@@ -173,6 +173,61 @@ Exemplo do corpo da requisição em [JSON](#json):
 
 ```
 
+### Criação de novas posições
+
+Para criar uma nova posição é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
+
+```
+curl --X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions'
+```
+No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
+
+O rótulo "invite", "mobile", ou qualquer outro que seja seguido por chaves{} sâo a representação de um objeto que pode ou nâo estar dentro de outro.
+
+O rótulo "documents" recebe uma array de strings com os UID's referentes a cada documento solicitado pela organização que está craindo a posição.
+
+Exemplo do corpo da requisição em [JSON](#json):
+
+```
+{
+  "unit": "XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+  "limitDate": "2040-12-12",
+  "role": "XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "department": "XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "invite": {
+    "name": "nome do candidato",
+    "email": "email@exemplo.com",
+    "mobile": {
+      "countryCode": "55",
+      "number": "XX912345678"
+    }
+  },
+  "documents": [ "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" ],
+  "context": {
+    "brazil": {
+      "vinculo": "clt",
+      "pcd": true,
+      "pagamento": {
+        "valor": 1500.0,
+        "recorrencia": "mensalista"
+      },
+      "jornada": "Segunda a sexta",
+      "exame": {
+        "clinica": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        "data": "2025-08-08",
+        "hora": "22:00",
+        "observacoes": "Detalhes do agendamento."
+      }
+    }
+  },
+  "additional": {
+    "employeeCode": "123",
+    "admissionDate": "2025-08-08"
+  }
+}
+
+```
+
 ### Filtros
 
 Há ainda opções de configurar algumas opções de filtros utilizando outros rótulos do objeto. São eles:
@@ -198,7 +253,7 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
 
 * Ordenação
   
-  O rótulo "sort" possibilita a ordenação dos dados. Por padrão é utilizado a data de criação da vaga ordenado do mais angita até a adicionada mais recentemente, porém pode ser alterado utilizando algum dos valores a seguir:
+  O rótulo "sort" possibilita a ordenação dos dados. Por padrão é utilizado a data de criação da vaga ordenado do mais antigo até a adicionada mais recentemente, porém pode ser alterado utilizando algum dos valores a seguir:
 
   "created" - Ordena os registros de colaboradores recuperados por data de criação da vaga a partir dos mais antigos
 
