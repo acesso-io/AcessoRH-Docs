@@ -7,8 +7,9 @@
 ##### 1. [**Ativação da API**](#ativação-da-api)
 ##### 2. [**Consultando uma conta**](#consultando-uma-conta)
 ##### 3. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
-##### 4. [**Filtros**](#filtros)
-##### 5. [**Glossário**](#glossário)
+##### 4. [**Criação de novas posições**](#criação-de-novas-posições)
+##### 5. [**Filtros**](#filtros)
+##### 6. [**Glossário**](#glossário)
 
 ### Ativação da API
 
