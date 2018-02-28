@@ -5,12 +5,12 @@
 ## Índice
 
 ##### 1. [**Ativação da API**](#ativação-da-api)
-##### 2. [**Posições**](#positions)
-  ##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
-  ##### 2.2. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
-  ##### 2.3. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
-##### 4. [**Filtros**](#filtros)
-##### 5. [**Glossário**](#glossário)
+##### 2. [**Posições**](#posições)
+    ##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
+    ##### 2.2. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
+    ##### 2.3. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
+##### 3. [**Filtros**](#filtros)
+##### 4. [**Glossário**](#glossário)
 
 ### Ativação da API
 
