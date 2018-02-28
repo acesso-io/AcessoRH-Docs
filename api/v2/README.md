@@ -6,11 +6,12 @@
 
 ##### 1. [**Ativação da API**](#ativação-da-api)
 ##### 2. [**Posições**](#posições)
-##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
-##### 2.2. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
-##### 2.3. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
-##### 3. [**Filtros**](#filtros)
-##### 4. [**Glossário**](#glossário)
+  ##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
+##### 3  [**Exportação**](#exportação)
+  ##### 3.1. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
+  ##### 3.2. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
+##### 4. [**Filtros**](#filtros)
+##### 5. [**Glossário**](#glossário)
 
 ### Ativação da API
 
@@ -117,7 +118,7 @@ scope:service:api
 ```
 
 ### Posições
-Uma organização pode criar novas posições 
+Nosso sistema possibilita que a organização crie novas posições ou consulte as existentes conforme a necessidade. O passo a passo para realizar cada uma dessas operações está descrito em datalhes nos tópicos a seguir.
 
 ### Criação de novas posições
 
@@ -174,6 +175,9 @@ Exemplo do corpo da requisição em [JSON](#json):
 
 ```
 
+### Exportação
+Os dados podem ser exportados em formato csv para um layout customizado
+
 ### Exportando dados de uma conta
 
 Para consultar uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
@@ -207,7 +211,6 @@ Para realizar a consulta em mais de uma conta é necessário um [token](#token) 
 ```
 curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions/export'
 ```
-
 
 No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
 
