@@ -5,11 +5,13 @@
 ## Índice
 
 ##### 1. [**Ativação da API**](#ativação-da-api)
-##### 2. [**Consultando uma conta**](#consultando-uma-conta)
-##### 3. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
-##### 4. [**Criação de novas posições**](#criação-de-novas-posições)
-##### 5. [**Filtros**](#filtros)
-##### 6. [**Glossário**](#glossário)
+##### 2. [**Posições**](#posições)
+  ##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
+##### 3  [**Exportação**](#exportação)
+  ##### 3.1. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
+  ##### 3.2. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
+##### 4. [**Filtros**](#filtros)
+##### 5. [**Glossário**](#glossário)
 
 ### Ativação da API
 
@@ -63,8 +65,6 @@ extendedKeyUsage = critical, clientAuth
 | -keyout       | O valor aqui, utilizando o exemplo anterior, deverá ser svcapp1.key.pem no lugar de service_account_name.key.pem.|
 | -out          | O valor aqui, utilizando o exemplo anterior, deverá ser svcapp1.cert.pem no lugar de service_account_name.cert.pem.|
 
-
-
 ```
 openssl req -x509 -new -nodes -sha1 -days 730 -newkey rsa:2048 \
 -subj "/CN=service_account_name@tenant_id.iam.acesso.io" \
@@ -101,7 +101,6 @@ Exemplo do Payload Antes da codificação:
 [byte array da assinatura]
 ```
 
-
 Token portador JWT:
 
 ```
@@ -118,61 +117,8 @@ assertion: colocar o token de serviço JSW aqui
 scope:service:api
 ```
 
-
-### Consultando uma conta
-
-Para consultar uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
-
-```
-curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions/export'
-```
-
-No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
-
-O rótulo "accounts" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
-
-Exemplo do corpo da requisição em [JSON](#json):
-
-```
-{
-  "accounts": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
-  "limit": 100,
-  "skip": 0,
-  "template":"csv-v2.0",
-  "sort":"-created",
-  "status": ["archived"]
-}
-
-```
-
-
-
-### Consultando múltiplas contas
-
-Para realizar a consulta em mais de uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de cada uma das contas. O corpo da requisição não se altera, basta apenas passar no corpo todos os UID's de contas desejados:
-
-```
-curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions/export'
-```
-
-
-No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
-
-O rótulo "accounts" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
-
-Exemplo do corpo da requisição em [JSON](#json):
-
-```
-{
-  "accounts": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
-  "limit": 100,
-  "skip": 0,
-  "template":"csv-v2.0",
-  "sort":"-created",
-  "status": ["archived"]
-}
-
-```
+### Posições
+Nosso sistema possibilita que a organização crie novas posições ou consulte as existentes conforme a necessidade. O passo a passo para realizar cada uma dessas operações está descrito em datalhes nos tópicos a seguir.
 
 ### Criação de novas posições
 
@@ -209,7 +155,7 @@ Exemplo do corpo da requisição em [JSON](#json):
       "vinculo": "clt",
       "pcd": true,
       "pagamento": {
-        "valor": 1500.0,
+      "valor": 1500.0,
         "recorrencia": "mensalista"
       },
       "jornada": "Segunda a sexta",
@@ -225,6 +171,61 @@ Exemplo do corpo da requisição em [JSON](#json):
     "employeeCode": "123",
     "admissionDate": "2025-08-08"
   }
+}
+
+```
+
+### Exportação
+Os dados podem ser exportados em formato csv para um layout customizado
+
+### Exportando dados de uma conta
+
+Para consultar uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
+
+```
+curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions/export'
+```
+
+No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
+
+O rótulo "accounts" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
+
+Exemplo do corpo da requisição em [JSON](#json):
+
+```
+{
+  "unit": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "limit": 100,
+  "skip": 0,
+  "template":"csv-v2.0",
+  "sort":"-created",
+  "status": ["archived"]
+}
+
+```
+
+### Exportando dados de múltiplas contas
+
+Para realizar a consulta em mais de uma conta é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de cada uma das contas. O corpo da requisição não se altera, basta apenas passar no corpo todos os UID's de contas desejados:
+
+```
+curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions/export'
+```
+
+No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
+
+O rótulo "accounts" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
+
+Exemplo do corpo da requisição em [JSON](#json):
+
+```
+{
+  "accounts": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "limit": 100,
+  "skip": 0,
+  "template":"csv-v2.0",
+  "sort":"-created",
+  "status": ["archived"]
 }
 
 ```
@@ -250,7 +251,6 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
   Pode-se escolher qual o modelo a ser utilizado utilizando o rótulo "template". Abaixo estão descritas as opções existentes:
 
   [csv-v2.0](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/templates/csv-v2.0.csv) - Padrão da Acesso de csv com todos os dados dos colaboradores.
-
 
 * Ordenação
   
