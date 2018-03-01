@@ -6,10 +6,10 @@
 
 ##### 1. [**Ativação da API**](#ativação-da-api)
 ##### 2. [**Posições**](#posições)
-  ##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
+##### 2.1. [**Criação de novas posições**](#criação-de-novas-posições)
 ##### 3  [**Exportação**](#exportação)
-  ##### 3.1. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
-  ##### 3.2. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
+##### 3.1. [**Exportando dados de uma conta**](#exportando-dados-de-uma-conta)
+##### 3.2. [**Exportação dados de múltiplas contas**](#exportando-dados-de-múltiplas-contas)
 ##### 4. [**Filtros**](#filtros)
 ##### 5. [**Glossário**](#glossário)
 
