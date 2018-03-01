@@ -85,7 +85,7 @@ seguintes etapas:
 
 O Diagrama a seguir ilustra a sequência para a autenticação:
 
-![Diagram](/assets/images/diagram.png?raw=true "Diagram")
+![Diagram](/AcessoRH-Docs/assets/images/diagram.png?raw=true "Diagram")
 
 Exemplo do Payload Antes da codificação: 
 
