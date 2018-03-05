@@ -125,7 +125,7 @@ Nosso sistema possibilita que a organização crie novas posições ou consulte 
 Para criar uma nova posição é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
 
 ```
-curl --X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/positions'
+curl --X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/position'
 ```
 No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
 
@@ -188,7 +188,7 @@ curl -X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v2/
 
 No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
 
-O rótulo "accounts" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
+O rótulo "unit" aceita um array de strings contendo os UID's das contas. Logo, basta realizar a requisição com o UID da conta que deseja obter os dados.
 
 Exemplo do corpo da requisição em [JSON](#json):
 
@@ -220,7 +220,7 @@ Exemplo do corpo da requisição em [JSON](#json):
 
 ```
 {
-  "accounts": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "unit": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
   "limit": 100,
   "skip": 0,
   "template":"csv-v2.0",
@@ -286,7 +286,7 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
 Exemplo:
 ```
 {
-  "accounts": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "unit": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
   "limit": 100,
   "skip": 0,
   "template":"csv-v2.0",
