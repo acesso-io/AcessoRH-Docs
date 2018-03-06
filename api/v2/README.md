@@ -251,9 +251,12 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
   Pode-se escolher qual o modelo a ser utilizado utilizando o rótulo "template". Abaixo estão descritas as opções existentes:
 
   [csv-v2.0](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/templates/csv-v2.0.csv) - Padrão da Acesso de csv com todos os dados dos colaboradores.
-  [txt-apdata-update] 
-  [txt-apdata-v2.0]
-  [xml-v1.0]
+  
+  txt-apdata-update 
+  
+  txt-apdata-v2.0
+  
+  xml-v1.0
 
 * Ordenação
   
