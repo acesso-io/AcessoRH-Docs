@@ -90,6 +90,7 @@ Content-Type: application/json
   "acc": "22a2ceb7-418f-4501-aa91-52064f269743",
   "status": 240,
   "pagamento": { "vinculo": "clt", "valor": "R$ 4.321,00" },
+  "num_matricula": "4141414-55",
   "admission_date": "2018-08-08 00:00:00.000Z",
   "_created": "2017-07-17 19:03:24.216Z",
   "_updated": "2017-07-17 19:03:24.216Z"
@@ -144,7 +145,8 @@ Content-Type: application/json
     "org": "22a2ceb7-418f-4501-aa91-52064f269743"
   },
   "admission_date": "2018-08-07T21:00:00-03:00",
-  "department": {
+  "num_matricula": "4141414-55",
+  "department": {
     "account": "22a2ceb7-418f-4501-aa91-52064f269743",
     "id": "22a2ceb7-418f-4501-aa91-52064f269743",
     "name": "Depto Pessoal"
@@ -473,6 +475,7 @@ Content-Type: application/json
       "status": 240,
       "pagamento": {"vinculo":"clt","valor":"R$ 5.000,00"},
       "admission_date": "2017-05-08 00:00:00.000Z",
+      "num_matricula": "4141414-55",
       "_created": "2017-07-19 19:03:24.216Z",
       "_updated": "2017-07-19 19:03:24.216Z"
     }
