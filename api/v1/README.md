@@ -10,7 +10,8 @@
 ##### 4. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
 ##### 5. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
 ##### 6. [**Consultando uma conta**](#consultando-uma-conta)
-##### 7. [**Glossário**](#glossário)
+##### 7. [**Criando uma conta**](#criando-uma-conta)
+##### 8. [**Glossário**](#glossário)
 
 ### Ativação da API
 
@@ -611,6 +612,28 @@ Content-Type: application/json
   "zip_code": "00000000"
 }
 ```
+
+### Criando uma conta
+
+Para criar uma conta é necessário um [token](#token) com permissão, e o UID de uma conta específica.
+
+```
+curl -X POST  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/position'
+```
+
+é necessário enviar um form-data com um arquivo CSV
+
+```
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="csv"; filename="file.csv"
+Content-Type: text/csv
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="exame_0"
+```
+
+o arquivo exemplo CSV se encontra na pasta CSV/insert_position.csv
 
 ### Glossário
 
