@@ -10,7 +10,7 @@
 ##### 4. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
 ##### 5. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
 ##### 6. [**Consultando uma conta**](#consultando-uma-conta)
-##### 7. [**Criando uma conta**](#criando-uma-conta)
+##### 7. [**Criando uma posição**](#criando-uma-posicao)
 ##### 8. [**Glossário**](#glossário)
 
 ### Ativação da API
@@ -613,9 +613,9 @@ Content-Type: application/json
 }
 ```
 
-### Criando uma conta
+### Criando uma posição
 
-Para criar uma conta é necessário um [token](#token) com permissão, e o UID de uma conta específica.
+Para criar uma posição é necessário um [token](#token) com permissão, e o UUID de uma conta específica.
 
 ```
 curl -X POST  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/position'
