@@ -11,7 +11,8 @@
 ##### 5. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
 ##### 6. [**Consultando uma conta**](#consultando-uma-conta)
 ##### 7. [**Criando uma posição**](#criando-uma-posicao)
-##### 8. [**Glossário**](#glossário)
+##### 8. [**Atualizando status de uma posição**](#atualizando-status-uma-posicao)
+##### 9. [**Glossário**](#glossário)
 
 ### Ativação da API
 
@@ -634,6 +635,30 @@ Content-Disposition: form-data; name="exame_0"
 ```
 
 o arquivo exemplo CSV se encontra na pasta CSV/insert_position.csv
+
+### Atualizando status de uma posição
+
+Para atualizar o status de uma posição é necessário um [token](#token) com permissão, e o UUID da posição na qual o status será atualizado
+
+```
+curl -X POST  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/positions/status/:pos'
+```
+
+é necessário enviar um payload JSON informando o novo status da posição e se será forçada essa mudança
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "status": "active",
+  "force": true
+}
+```
+
+A lista de status é:
+- active (ativo):
+- dismissal (arquivado)
+
 
 ### Glossário
 
