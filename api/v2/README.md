@@ -262,7 +262,8 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
   
   xml-v2.1
   
-
+  xls-sap-v1.0
+  
 * Ordenação
   
   O rótulo "sort" possibilita a ordenação dos dados. Por padrão é utilizado a data de criação da vaga ordenado do mais antigo até a adicionada mais recentemente, porém pode ser alterado utilizando algum dos valores a seguir:
