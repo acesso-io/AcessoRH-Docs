@@ -619,7 +619,7 @@ Content-Type: application/json
 Para criar uma posição é necessário um [token](#token) com permissão, e o UUID de uma conta específica.
 
 ```
-curl -X POST  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/accounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/position'
+curl -X POST  -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/account/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/position'
 ```
 
 é necessário enviar um form-data com um arquivo CSV
