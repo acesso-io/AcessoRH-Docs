@@ -250,21 +250,19 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
   
   Pode-se escolher qual o modelo a ser utilizado utilizando o rótulo "template". Abaixo estão descritas as opções existentes:
 
-  [csv-v2.0](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/templates/csv-v2.0.csv) - Padrão da Acesso de csv com todos os dados dos colaboradores.
+  [csv-v2.0](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/templates/csv-v2.0.csv) - Padrão da Acesso de CSV com todos os dados dos colaboradores, separado por vírgula (,).
   
-  csv-v2.2
+  [csv-v2.2](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/csv-v2.2.csv) - Mesmo padrão do [csv-v2.0](https://github.com/acesso-io/AcessoRH-Docs/tree/master/assets/templates/csv-v2.0.csv), porém, separado por ponto e virgula (;).
   
-  csv-peoplesoft-v1.0
+  [csv-peoplesoft-v1.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/csv-peoplesoft-v1.0.csv) - Arquivo CSV - Porém com algumas diferenças nos campos, separado por ponto e virgula (;).
   
-  txt-apdata-update 
+  [txt-apdata-update](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-update.txt) - Arquivo TXT - específico para recadastramento. Contém o código do campo e o valor correspondente.
   
-  txt-apdata-v2.0
+  [txt-apdata-v2.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-v2.0.txt) - Arquivo TXT - contém o código do campo e o valor correspondente.
   
-  xml-v1.0
+  [xml-v2.1](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/xml-v2.1.xml) - Arquivo XML - Contém a position dos documentos e suas informações.
   
-  xml-v2.1
-  
-  xls-sap-v1.0
+  [xls-sap-v1.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/xls-sap-v1.0.xls) - Arquivo XLS - Separado por vírgula (,).
   
 * Ordenação
   
