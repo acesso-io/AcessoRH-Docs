@@ -256,9 +256,9 @@ Há ainda opções de configurar algumas opções de filtros utilizando outros r
   
   [csv-peoplesoft-v1.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/csv-peoplesoft-v1.0.csv) - Arquivo CSV - Porém com algumas diferenças nos campos, separado por ponto e virgula (;).
   
-  [txt-apdata-update](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-update.txt) - Arquivo TXT - específico para recadastramento. Contém o código do campo e o valor correspondente.
+  [txt-apdata-update](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-update.txt) - Arquivo TXT - Específico para recadastramento. Contém o código do campo e o valor correspondente.
   
-  [txt-apdata-v2.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-v2.0.txt) - Arquivo TXT - contém o código do campo e o valor correspondente.
+  [txt-apdata-v2.0](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/txt-apdata-v2.0.txt) - Arquivo TXT - Contém o código do campo e o valor correspondente.
   
   [xml-v2.1](https://github.com/acesso-io/AcessoRH-Docs/blob/master/assets/templates/xml-v2.1.xml) - Arquivo XML - Contém a position dos documentos e suas informações.
   
