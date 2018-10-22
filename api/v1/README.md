@@ -4,15 +4,17 @@
 
 ## Índice
 
-##### 1. [**Ativação da API**](#ativação-da-api)
-##### 2. [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
-##### 3. [**Consultando uma posição**](#consultando-uma-posição)
-##### 4. [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
-##### 5. [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
-##### 6. [**Consultando uma conta**](#consultando-uma-conta)
-##### 7. [**Criando uma posição**](#criando-uma-posicao)
-##### 8. [**Atualizando status de uma posição**](#atualizando-status-uma-posicao)
-##### 9. [**Glossário**](#glossário)
+##### 1.  [**Ativação da API**](#ativação-da-api)
+##### 2.  [**Recebendo notificação de posições concluídas**](#recebendo-notificação-de-posições-concluídas)
+##### 3.  [**Consultando uma posição**](#consultando-uma-posição)
+##### 4.  [**Consultando múltiplas posições**](#consultando-múltiplas-posições)
+##### 5.  [**Consultando múltiplas contas**](#consultando-múltiplas-contas)
+##### 6.  [**Consultando uma conta**](#consultando-uma-conta)
+##### 7.  [**Criando uma posição**](#criando-uma-posicao)
+##### 8.  [**Criando uma posição json**](#criando-uma-posicao-json)
+##### 9.  [**Exportação de imagens*](#export-zip)
+##### 10. [**Atualizando status de uma posição**](#atualizando-status-uma-posicao)
+##### 11. [**Glossário**](#glossário)
 
 ### Ativação da API
 
@@ -668,6 +670,16 @@ Content-Type: application/json
   "limit_date": "2018-12-12T00:00:00Z"
 }
 ```
+
+### Exportação de imagens
+
+O endpoint de exportação disponibiliza um arquivo ZIP com todas as imagens subidas pelo candidato. 
+
+```
+curl -X POST  -H "Authorization: Bearer {token}" 'ttps://api.acessorh.com.br/v1/positions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/export/zip'
+```
+
+a resposta é um binario em formato ZIP 
 
 
 ### Atualizando status de uma posição
