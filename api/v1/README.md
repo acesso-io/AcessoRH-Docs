@@ -12,7 +12,7 @@
 ##### 6.  [**Consultando uma conta**](#consultando-uma-conta)
 ##### 7.  [**Criando uma posição**](#criando-uma-posicao)
 ##### 8.  [**Criando uma posição json**](#criando-uma-posicao-json)
-##### 9.  [**Exportação de imagens*](#export-zip)
+##### 9.  [**Exportação de imagens**](#export-zip)
 ##### 10. [**Atualizando status de uma posição**](#atualizando-status-uma-posicao)
 ##### 11. [**Glossário**](#glossário)
 
