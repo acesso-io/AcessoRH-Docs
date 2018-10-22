@@ -636,6 +636,40 @@ Content-Disposition: form-data; name="exame_0"
 
 o arquivo exemplo CSV se encontra na pasta CSV/insert_position.csv
 
+### Criando uma posição JSON
+
+além da criação usando csv também é possível usando JSON.
+
+```
+curl -X POST  -H "Authorization: Bearer {token}" 'ttps://api.acessorh.com.br/v1/account/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/json/position'
+```
+
+corpo da requisição:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "num_matricula":"413419_4510707",
+  "pos_number":"79-OPERADORLOJAII",
+  "role":"2-Alternativename",
+  "department":"12312weawdawdsa",
+  "pagamento":{
+  "vinculo":"CLT",
+  "recorrencia":"mensalista"
+	},
+  "profile":{
+  "name":"TESTE",
+  "email":"teste@levee.com",
+  "mobile":"11983229288"
+	},
+  "docs":[],
+  "send_sms":true,
+  "limit_date": "2018-12-12T00:00:00Z"
+}
+```
+
+
 ### Atualizando status de uma posição
 
 Para atualizar o status de uma posição é necessário um [token](#token) com permissão, e o UUID da posição na qual o status será atualizado
