@@ -194,12 +194,12 @@ Exemplo do corpo da requisição em [JSON](#json):
 
 ```
 {
-  "unit": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "units": [ "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" ],
   "limit": 100,
   "skip": 0,
-  "template":"csv-v2.0",
-  "sort":"-created",
-  "status": ["archived"]
+  "template": "csv-v2.0",
+  "sort": "-created",
+  "status": [ "archived" ]
 }
 
 ```
@@ -220,12 +220,12 @@ Exemplo do corpo da requisição em [JSON](#json):
 
 ```
 {
-  "unit": ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"],
+  "units": [ "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" ],
   "limit": 100,
   "skip": 0,
-  "template":"csv-v2.0",
-  "sort":"-created",
-  "status": ["archived"]
+  "template": "csv-v2.0",
+  "sort": "-created",
+  "status": [ "archived" ]
 }
 
 ```
