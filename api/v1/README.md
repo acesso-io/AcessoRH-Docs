@@ -13,7 +13,9 @@
 
 Para a utilização da API é nescessária uma conta de serviço. Uma credencial de conta de serviço inclui um nome único de conta, um identificador da empresa (Tenant ID) e ao menos um par de chave pública/privada. Para gerar uma credencial de conta de serviço é preciso nos enviar os seguintes dados: 
 
-- Nome da empresa o CNPJ da empresa o Nome da aplicação o Nome e email do responsável pela aplicação na empresa
+- Nome da empresa o CNPJ da empresa
+- Nome da aplicação
+- Nome e email do responsável pela aplicação na empresa
 - Email do responsável pela aplicação na empresa
 
 Após o recebimento desses dados, será criada uma conta de serviço responsável por autenticar a sua aplicação. Enviaremos o nome desta conta em conjunto com o identificador da empresa (Tenant ID). 
@@ -42,7 +44,8 @@ keyUsage = critical, nonRepudiation, digitalSignature
 extendedKeyUsage = critical, clientAuth
 ```
 
-Uma vez criado o arquivo openssl_idp.cnf basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruções da tabela abaixo, para que o OpenSSL crie a chave pública/privada: 
+Uma vez criado o arquivo openssl_idp.cnf basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruções da tabela abaixo, para que o OpenSSL crie a chave pública/privada:
+
 | Parâmetro | Valor |
 | --------- | ----- |
 | -days | Tempo de validade do certificado. Por padrão 730 dias (2 anos). |
@@ -97,7 +100,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzZXJ2aWNlX2FjY291bnRfbmFtZUB0ZW5
 
 Este é o token usado para fazer as chamadas REST durante seu tempo de validade.
 
-Para autenticar-se, o cliente deverá enviar uma requisição POST https://identity.acesso.io/oauth2/token  com um corpo x-wwww-form-urlencoded com os seguintes parâmetros:
+Para autenticar-se, o cliente deverá enviar uma requisição POST https://identity.acesso.io/oauth2/token  com um corpo `x-wwww-form-urlencoded` com os seguintes parâmetros:
 
 ```
 grant_type:urn:ietf:params:oauth:grant-type:jwt-bearer
