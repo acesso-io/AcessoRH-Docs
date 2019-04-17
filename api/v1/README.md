@@ -20,7 +20,7 @@ Para a utilização da API é nescessária uma conta de serviço. Uma credencial
 
 Após o recebimento desses dados, será criada uma conta de serviço responsável por autenticar a sua aplicação. Enviaremos o nome desta conta em conjunto com o identificador da empresa (Tenant ID). 
 
-Para que a utilização da conta de serviço seja possível, é preciso que você crie o par de chave pública/privada e nos envie apenas a chave pública para associarmos ela à conta de serviço. Uma forma eficaz de criar a chave pública/privada é utilizando a ferramenta OpenSSL. Para tal, é preciso criar um arquivo com as informações da requisição da criação de certificados. Salvar no arquivo openssl_idp.cnf os dados abaixo: 
+Para que a utilização da conta de serviço seja possível, é preciso que você crie o par de chave pública/privada e nos envie apenas a chave pública para associarmos ela à conta de serviço. Uma forma eficaz de criar a chave pública/privada é utilizando a ferramenta OpenSSL. Para tal, é preciso criar um arquivo com as informações da requisição da criação de certificados. Salvar no arquivo **openssl_idp.cnf** os dados abaixo: 
 
 ```
 [ req ] 
@@ -44,7 +44,7 @@ keyUsage = critical, nonRepudiation, digitalSignature
 extendedKeyUsage = critical, clientAuth
 ```
 
-Uma vez criado o arquivo openssl_idp.cnf basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruções da tabela abaixo, para que o OpenSSL crie a chave pública/privada:
+Uma vez criado o arquivo **openssl_idp.cnf** basta executar o comando a seguir no console, substituindo os parâmetros de acordo com as instruções da tabela abaixo, para que o OpenSSL crie a chave pública/privada:
 
 | Parâmetro | Valor |
 | --------- | ----- |
@@ -60,7 +60,7 @@ openssl req -x509 -new -nodes -sha1 -days 730 -newkey rsa:2048 \
 -config ./openssl_idp.cnf 
 ```
 
-Concluída a criação da chave pública/privada, você deverá nos enviar apenas a chave pública, no exemplo, o arquivo svcapp1.cert.pem para que possamos armazená-la na plataforma de autenticação associada à sua conta de serviço. A plataforma de autenticação suporta até o momento apenas chaves no formato PEM. Assim que a chave pública estiver associada à sua conta de serviço na plataforma de autenticação já será possível fazer requisições de autenticação da conta de serviço. 
+Concluída a criação da chave pública/privada, você deverá nos enviar apenas a chave pública, no exemplo, o arquivo **svcapp1.cert.pem** para que possamos armazená-la na plataforma de autenticação associada à sua conta de serviço. A plataforma de autenticação suporta até o momento apenas chaves no formato PEM. Assim que a chave pública estiver associada à sua conta de serviço na plataforma de autenticação já será possível fazer requisições de autenticação da conta de serviço. 
 
 ### Fazendo requisições de autenticação da conta de serviço
 
@@ -119,7 +119,7 @@ Para criar uma nova posição é necessário um [token](#token) com permissão d
 curl --X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/:unit/json/position'
 ```
 
-Alterar o parâmetro `:unit` pelo UID da filial onde deseja criar a posição.
+Alterar o parâmetro `:unit` da URL pelo UID da filial onde deseja criar a posição.
 
 No corpo da requisição deve ser enviado um objeto em JSON. Um objeto JSON utiliza pares de nome(ou rótulo)/valor onde um par deve ser representado pelo nome entre aspas duplas, seguido de dois pontos, seguido do valor.
 
