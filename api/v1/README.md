@@ -1,6 +1,6 @@
 # **API**
 
- Plataforma da Acesso RH para consulta de cadastros concluídos.
+ Plataforma da Acesso RH para cadastro e consulta de posições.
 
 ## Índice
 
