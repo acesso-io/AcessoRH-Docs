@@ -113,7 +113,7 @@ Nosso sistema possibilita que a organização crie novas posições ou consulte 
 
 ### Criação de novas posições
 
-Para criar uma nova posição é necessário um [token](#token) com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
+Para criar uma nova posição é necessário um token  com permissão de acesso a dados de uma organização, e o UID de uma conta específica.
 
 ```
 curl --X POST -H "Authorization: Bearer {token}" 'https://api.acessorh.com.br/v1/:unit/json/position'
@@ -129,33 +129,54 @@ Exemplo do corpo da requisição em JSON:
 
 ```
 {
-  "num_matricula":"4242424",
-  "limit_date":"2018-01-01",
-  "admission_date":"2018-01-01",
-  "cost_center":"anywhere",
-  "pos_number":"pos-homer-test",
-  "role":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-  "department":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-  "pagamento":{
-    "vinculo":"clt",
-    "valor":"4200",
-    "recorrencia":"mensalista"
+  "num_matricula": "4242424",
+  "limit_date": "2018-01-01",
+  "admission_date": "2018-01-01",
+  "cost_center": "anywhere",
+  "pos_number": "pos-homer-test",
+  "role": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "department": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "pagamento": {
+    "vinculo": "clt",
+    "valor": "4200",
+    "recorrencia": "mensalista"
   },
-  "deficiencia":false,
-  "jornada":"De segunda a sexta das 15 as 19",
-  "profile":{
-    "name":"Joao Teste API",
-    "email":"teste@acessodigital.com.br",
-    "mobile":"1191111111"
+  "deficiencia": false,
+  "jornada": "De segunda a sexta das 15 as 19",
+  "profile": {
+    "name": "Joao Teste API",
+    "email": "teste@acessodigital.com.br",
+    "mobile": "11911111111"
   },
-  "exame":{
-    "data":"2018-01-01",
-    "hora":"14:00",
-    "obs":"Comparecer de manhã",
+  "exame": {
+    "data": "2018-01-01",
+    "hora": "14:00",
+    "obs": "Comparecer de manhã",
     "guia": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
   },
-  "docs":["c9e26093-5e0c-4bd2-bea3-ac5182a6179f"],
-  "send_sms":true,
-  "send_email":true
+  "docs": ["c9e26093-5e0c-4bd2-bea3-ac5182a6179f"],
+  "send_sms": true,
+  "send_email": true
+}
+```
+
+Com o sucesso da requisição, o status da resposta será `201 Created` e seu body deverá conter um objeto JSON no seguinte formato:
+
+```
+{
+  "code": 201,
+  "messages": null,
+  "result": {
+    "invite": {
+      "name": "Joao Teste API",
+      "email": "teste@acessodigital.com.br",
+      "mobile": {
+        "countryCode": "55",
+        "number": "11911111111"
+      }
+    },
+    "position": "e8efddec-4a9e-4153-9e61-ce0056edf542"
+  },
+  "status": "ok"
 }
 ```
